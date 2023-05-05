@@ -13,8 +13,10 @@ function HomeHero() {
   const picture = usePicture();
 
   useEffect(() => {
-    setShowImg(true);
-  }, []);
+    if (picture.length) {
+      setShowImg(true);
+    }
+  }, [picture]);
 
   return (
     <Container>
