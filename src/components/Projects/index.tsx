@@ -11,19 +11,19 @@ export function Projects() {
         <ProjectItem
           title="Projeto"
           type="- Website"
-          path="/projetos"
+          pathId="/"
           imgURL={null}
         />
         <ProjectItem
           title="Projeto"
           type="- Website"
-          path="/projetos"
+          pathId="/"
           imgURL={null}
         />
         <ProjectItem
           title="Projeto"
           type="- Website"
-          path="/projetos"
+          pathId="/"
           imgURL={null}
         />
       </section>

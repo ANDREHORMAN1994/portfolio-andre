@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { usePicture } from '../../hooks/usePicture';
+import avatar from '../../assets/avatar.png';
 import Code from './Code';
 import {
   Container,
@@ -9,22 +8,9 @@ import {
 } from './styles';
 
 function HomeHero() {
-  const [showImg, setShowImg] = useState(false);
-  const picture = usePicture();
-
-  useEffect(() => {
-    if (picture.length) {
-      setShowImg(true);
-    }
-  }, [picture]);
-
   return (
     <Container>
-      <img
-        className={showImg ? 'picture' : ''}
-        src={picture}
-        alt="Minha imagem do github"
-      />
+      <img className="picture" src={avatar} alt="Meu Avatar" />
       <div>
         <TextContainer>
           <h1>Olá</h1>

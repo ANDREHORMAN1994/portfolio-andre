@@ -12,11 +12,8 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 5rem;
 
-  > img {
+  > img.picture {
     opacity: 0;
-  }
-
-  > .picture {
     width: 25rem;
     /* flex: 1; */
     /* border-radius: 50%;
@@ -53,7 +50,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1450px) {
-    > img {
+    > img.picture {
       width: 25rem !important;
     }
 
@@ -64,7 +61,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1000px) {
-    > img {
+    > img.picture {
       width: 20rem !important;
     }
   }

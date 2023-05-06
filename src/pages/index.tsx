@@ -1,3 +1,4 @@
+import { About } from '../components/About';
 import { Experiences } from '../components/Experiences';
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
@@ -10,6 +11,7 @@ function Home() {
       <Header />
       <main className="container">
         <HomeHero />
+        <About />
         <Experiences />
         <Projects />
       </main>

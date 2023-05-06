@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import myPerfil from '../assets/avatar.png';
+import myPerfil from '../assets/myPerfil.png';
 
 export const usePicture = () => {
   const [picture, setPicture] = useState<string>('');
