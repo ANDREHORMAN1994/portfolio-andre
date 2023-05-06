@@ -71,38 +71,38 @@ export const ItemContainer = styled.div`
     > div {
       height: 15rem;
       padding-top: 1.5rem;
-    }
 
-    h1 {
-      font-size: 1.2rem;
-      margin: 1rem;
-    }
+      h1 {
+        font-size: 1.2rem;
+        margin: 1rem;
+      }
 
-    h1 {
-      font-size: 1rem;
-    }
+      h2 {
+        font-size: 1rem;
+      }
 
-    p {
-      font-size: 0.9rem;
+      p {
+        font-size: 0.9rem;
+      }
     }
   }
 
-  @media (max-width: 700) {
+  @media (max-width: 700px) {
     > div {
       height: auto;
       padding: 2rem;
-    }
 
-    h1 {
-      font-size: 2rem;
-    }
+      h1 {
+        font-size: 2rem;
+      }
 
-    h1 {
-      font-size: 1.5rem;
-    }
+      h2 {
+        font-size: 1.5rem;
+      }
 
-    p {
-      font-size: 1rem;
+      p {
+        font-size: 1rem;
+      }
     }
   }
 `;

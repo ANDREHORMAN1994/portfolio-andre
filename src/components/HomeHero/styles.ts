@@ -19,9 +19,9 @@ export const Container = styled.div`
   > .picture {
     width: 25rem;
     /* flex: 1; */
-    border-radius: 50%;
-    border: 2px solid ${({ theme }) => theme.primary};
-    box-shadow: 5px 10px 10px black;
+    /* border-radius: 50%;
+    border: 2px solid ${({ theme }) => theme.primary}; */
+    /* box-shadow: 5px 10px 10px black; */
     transform: translateY(100%);
     animation: slide-up 1s ease-in-out forwards;
   }
@@ -222,7 +222,7 @@ export const CodeItem = styled.section<CodeItemProps>`
   color: #fff;
   width: ${props => `${props?.size}rem` || '24rem'};
   align-self: flex-start;
-  transition: 1s;
+  transition: 0.5s;
   transform: translateX(100%);
   animation: slide-left 1s ease-in forwards;
 
