@@ -17,8 +17,8 @@ export const Container = styled.div`
   }
 
   > .picture {
-    width: 40rem;
-    flex: 2;
+    width: 25rem;
+    /* flex: 1; */
     border-radius: 50%;
     border: 2px solid ${({ theme }) => theme.primary};
     box-shadow: 5px 10px 10px black;
@@ -47,24 +47,25 @@ export const Container = styled.div`
   }
 
   > div {
-    flex: 3;
+    /* flex: 3; */
+    width: 40rem;
     margin-left: 30px;
   }
 
   @media (max-width: 1450px) {
     > img {
-      width: 30rem;
+      width: 25rem !important;
     }
 
     > div {
-      flex: 2;
+      /* flex: 2; */
       margin-left: 10px;
     }
   }
 
   @media (max-width: 1000px) {
     > img {
-      width: 22rem;
+      width: 20rem !important;
     }
   }
 
@@ -219,7 +220,7 @@ export const CodeItem = styled.section<CodeItemProps>`
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: ${props => props?.size || '24rem'};
+  width: ${props => `${props?.size}rem` || '24rem'};
   align-self: flex-start;
   transition: 1s;
   transform: translateX(100%);
@@ -256,7 +257,8 @@ export const CodeItem = styled.section<CodeItemProps>`
   }
 
   &:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.3);
+    padding: 2.5rem;
   }
 
   > div {

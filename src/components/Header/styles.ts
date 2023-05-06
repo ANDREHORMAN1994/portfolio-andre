@@ -11,7 +11,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid ${({ theme }) => theme.backgroundLight};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 
   nav {
     display: flex;

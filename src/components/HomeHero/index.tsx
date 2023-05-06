@@ -48,7 +48,7 @@ function HomeHero() {
           <Code
             text="Infos"
             showComments
-            size="24rem"
+            size="24"
             infos={[
               ['name', '"André"'],
               ['lastName', '"Horman"'],
@@ -58,7 +58,7 @@ function HomeHero() {
           />
           <Code
             text="Contacts"
-            size="30rem"
+            size="30"
             infos={[
               ['email', '"andre.horman1994@hotmail.com"'],
               ['linkedin', '"www.linkedin.com/in/andrehorman/"'],
