@@ -26,15 +26,15 @@ export function About() {
           <p>
             Meu nome é André Horman, nascido em Itabaiana - PB e atualmente
             morando em João Pessoa - PB. Meu interesse pela programação surgiu
-            em meados de 2020, quando iniciei um curso na Trybe. Foi amor à
-            primeira vista! Percebi que poderia ter uma nova perspectiva de
-            futuro ao explorar as tecnologias e possibilidades oferecidas pela
-            programação 💚.
+            em meados de 2020, quando iniciei a Trybe. Foi amor à primeira
+            vista! Percebi que poderia ter uma nova perspectiva de futuro ao
+            explorar as tecnologias e possibilidades oferecidas pela
+            programação. 💚
           </p>
           <p>
             Atualmente, estou focado em aprimorar minhas habilidades como
             desenvolvedor Full Stack, com o objetivo de obter novas experiências
-            que possam contribuir para meu futuro.
+            que possam contribuir para meu futuro. 🚀
           </p>
           <p>
             Minhas principais stacks são:{' '}
