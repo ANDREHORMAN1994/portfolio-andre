@@ -47,9 +47,9 @@ function HomeHero() {
             infos={[
               ['cell', '"(83) 99363-8760"'],
               ['email', '"andre.horman1994@hotmail.com"'],
-              ['linkedin', '"www.linkedin.com/in/andrehorman/"'],
-              ['github', '"https://github.com/ANDREHORMAN1994"'],
-              ['curriculum', '"https://resume.io/r/5XOjVWyDz"']
+              ['linkedin', '"linkedin.com/in/andrehorman"'],
+              ['github', '"github.com/ANDREHORMAN1994"'],
+              ['curriculum', '"resume.io/r/5XOjVWyDz"']
             ]}
           />
         </InfoContainer>

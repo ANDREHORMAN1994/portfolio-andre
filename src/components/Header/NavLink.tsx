@@ -5,11 +5,18 @@ import { NavItemContainer } from './styles';
 interface Props {
   title: string;
   path: string;
+  includes?: boolean;
 }
 
-function NavLink({ title, path }: Props) {
+function NavLink({ title, path, includes = false }: Props) {
   const router = useRouter();
-  const isActive = router.pathname === path;
+
+  const verifyIsActive = () => {
+    if (includes) return router.pathname.includes(path);
+    return path === router.pathname;
+  };
+
+  const isActive = verifyIsActive();
 
   return (
     <NavItemContainer isActive={isActive}>
@@ -19,5 +26,9 @@ function NavLink({ title, path }: Props) {
     </NavItemContainer>
   );
 }
+
+NavLink.defaultProps = {
+  includes: false
+};
 
 export default NavLink;

@@ -15,7 +15,7 @@ function Header({ status, setStatus }) {
     <Container>
       <nav>
         <NavLink path="/" title="Home" />
-        <NavLink path="/projetos" title="Projetos" />
+        <NavLink path="/projects" title="Projetos" includes />
         <ButtonIcon status={status} type="button" onClick={handleClick}>
           {status ? <GiDeskLamp /> : <GiFlexibleLamp />}
         </ButtonIcon>
