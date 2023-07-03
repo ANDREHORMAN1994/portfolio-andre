@@ -43,11 +43,13 @@ function HomeHero() {
           />
           <Code
             text="Contacts"
-            size="30"
+            size="31.5"
             infos={[
+              ['cell', '"(83) 99363-8760"'],
               ['email', '"andre.horman1994@hotmail.com"'],
               ['linkedin', '"www.linkedin.com/in/andrehorman/"'],
-              ['cell', '"(83) 99363-8760"']
+              ['github', '"https://github.com/ANDREHORMAN1994"'],
+              ['curriculum', '"https://resume.io/r/5XOjVWyDz"']
             ]}
           />
         </InfoContainer>

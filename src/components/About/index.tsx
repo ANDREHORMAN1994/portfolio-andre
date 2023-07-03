@@ -39,8 +39,8 @@ export function About() {
           <p>
             Minhas principais stacks são:{' '}
             <span>
-              HTML, CSS, JavaScript, Jest, React, Redux, Context Api, Node,
-              Express, MongoDB, MySQL e uma pitada de Python
+              HTML, CSS, JavaScript, Jest, React, Next, Redux, Context Api,
+              Node, Express, MongoDB, MySQL e uma pitada de Python
             </span>
             .
           </p>
