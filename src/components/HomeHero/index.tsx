@@ -1,4 +1,3 @@
-import avatar from '../../assets/avatar.png';
 import Code from './Code';
 import {
   Container,
@@ -10,7 +9,7 @@ import {
 function HomeHero() {
   return (
     <Container>
-      <img className="picture" src={avatar} alt="Meu Avatar" />
+      <img className="picture" src="/images/avatar.png" alt="Meu Avatar" />
       <div>
         <TextContainer>
           <h1>Olá</h1>

@@ -1,12 +1,15 @@
 import { ThemeProvider } from 'styled-components';
 
+import { useState } from 'react';
 import GlobalStyles from '../styles/global';
-import theme from '../styles/theme';
+import { themeDark, themeLight } from '../styles/theme';
 
 function MyApp({ Component, pageProps }) {
+  const [status, setStatus] = useState(false);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
+    <ThemeProvider theme={status ? themeLight : themeDark}>
+      <Component {...pageProps} status={status} setStatus={setStatus} />
       <GlobalStyles />
     </ThemeProvider>
   );

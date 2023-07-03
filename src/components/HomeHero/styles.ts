@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   > img.picture {
     opacity: 0;
-    width: 25rem;
+    width: 25rem !important;
     /* flex: 1; */
     /* border-radius: 50%;
     border: 2px solid ${({ theme }) => theme.primary}; */
@@ -50,9 +50,9 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1450px) {
-    > img.picture {
+    /* > img.picture {
       width: 25rem !important;
-    }
+    } */
 
     > div {
       /* flex: 2; */

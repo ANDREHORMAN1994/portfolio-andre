@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import myPerfil from '../assets/myPerfil.png';
 
 export const usePicture = () => {
   const [picture, setPicture] = useState<string>('');
@@ -17,7 +16,7 @@ export const usePicture = () => {
         setPicture(data.avatar_url);
       }
     } catch (error) {
-      setPicture(myPerfil);
+      setPicture('/images/myPerfil.png');
     }
   };
 

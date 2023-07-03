@@ -1,11 +1,14 @@
-import { FormContainer, Input } from './styles';
+import { FormContainer, Input, TextArea } from './styles';
 
 function Form() {
   return (
     <FormContainer>
       <Input type="text" placeholder="Nome" required />
       <Input type="email" placeholder="E-mail" required />
-      <button type="submit">Enviar</button>
+      <TextArea placeholder="Mensagem" required />
+      <button type="submit" disabled>
+        Enviar
+      </button>
     </FormContainer>
   );
 }

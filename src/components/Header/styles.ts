@@ -5,6 +5,10 @@ interface NavLinkProps {
   isActive: boolean;
 }
 
+interface ButtonIconProps {
+  status: boolean;
+}
+
 export const Container = styled.header`
   width: 100%;
   height: 4rem;
@@ -17,6 +21,18 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+`;
+
+export const ButtonIcon = styled.button<ButtonIconProps>`
+  background: none;
+  border: none;
+
+  > svg {
+    color: ${({ theme, status }) => (status ? theme.primary : theme.primary)};
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
   }
 `;
 
