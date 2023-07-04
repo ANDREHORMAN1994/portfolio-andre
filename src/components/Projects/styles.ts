@@ -36,7 +36,7 @@ export const Container = styled.div`
 
     a {
       text-transform: uppercase;
-      color: #fff;
+      color: ${({ theme }) => theme.textPure};
       font-size: 1.5rem;
       font-weight: 300;
     }
@@ -64,7 +64,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     border: none;
 
     a {
-      color: #fff;
+      color: ${({ theme }) => theme.textPure};
       font-size: 2rem;
       font-weight: 300;
       display: flex;
@@ -100,14 +100,14 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       h1 {
         color: ${({ theme }) => theme.primary};
         font-size: 2.5rem;
-        text-shadow: -4px 5px 22px #11172b;
+        /* text-shadow: -4px 5px 22px #11172b; */
       }
 
       h2 {
         color: ${({ theme }) => theme.secondary};
         font-size: 2rem;
         font-weight: 300;
-        text-shadow: -4px 5px 22px #11172b;
+        /* text-shadow: -4px 5px 22px #11172b; */
       }
     }
   }

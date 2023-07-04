@@ -19,7 +19,7 @@ export const ProjectDetailsContainer = styled.div`
     padding: 0 5rem;
 
     p {
-      color: ${({ theme }) => theme.textLight};
+      color: ${({ theme }) => theme.textPure};
       font-size: 1.5rem;
       font-weight: 300;
       text-align: justify;
@@ -38,7 +38,7 @@ export const ProjectDetailsContainer = styled.div`
       }
 
       a {
-        color: #fff;
+        color: ${({ theme }) => theme.textPure};
         text-transform: uppercase;
         font-size: 1.5rem;
         font-weight: 300;

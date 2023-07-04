@@ -9,7 +9,14 @@ import {
 function HomeHero() {
   return (
     <Container>
-      <img className="picture" src="/images/avatar.png" alt="Meu Avatar" />
+      <div className="pictures-container">
+        <img className="picture" src="/images/Avatar.png" alt="Meu Avatar" />
+        <img
+          className="picture"
+          src="/images/React-Logo.png"
+          alt="Meu Avatar"
+        />
+      </div>
       <div>
         <TextContainer>
           <h1>Olá</h1>

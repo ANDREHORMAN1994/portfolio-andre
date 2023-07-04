@@ -12,25 +12,59 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 5rem;
 
-  > img.picture {
-    opacity: 0;
-    width: 25rem !important;
-    /* flex: 1; */
-    /* border-radius: 50%;
-    border: 2px solid ${({ theme }) => theme.primary}; */
-    /* box-shadow: 5px 10px 10px black; */
-    transform: translateY(100%);
-    animation: slide-up 1s ease-in-out forwards;
+  > div.pictures-container {
+    /* background-color: red; */
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+
+    > img.picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      opacity: 0;
+      /* width: 25rem !important;
+      flex: 1;
+      border-radius: 50%;
+      border: 2px solid ${({ theme }) => theme.primary};
+      box-shadow: 5px 10px 10px black; */
+      /* transform: translateY(100%); */
+
+      &:first-child {
+        z-index: 1;
+        animation: slide-up 1s ease-in-out forwards;
+      }
+
+      &:last-child {
+        animation: opacity 1s ease-in forwards, rotation 10s linear infinite;
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes slide-up {
     0% {
       transform: translateY(40%);
       opacity: 0;
-    }
-    80% {
-      transform: translateY(0%);
-      opacity: 0.5;
     }
     100% {
       transform: translateY(0%);
@@ -50,10 +84,6 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1450px) {
-    /* > img.picture {
-      width: 25rem !important;
-    } */
-
     > div {
       /* flex: 2; */
       margin-left: 10px;
@@ -61,13 +91,31 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1000px) {
-    > img.picture {
-      width: 20rem !important;
+    > div.pictures-container {
+      margin: 0;
+      padding: 0;
+      width: 40rem;
+      height: 30rem;
+      /* background-color: red; */
+
+      > img.picture {
+        /* background-color: blue; */
+        top: 5rem;
+      }
     }
   }
 
   @media (max-width: 700px) {
     flex-direction: column-reverse;
+
+    > div.pictures-container {
+      width: 20rem;
+      height: 20rem;
+
+      > img.picture {
+        top: 0;
+      }
+    }
 
     > div {
       width: 100%;
@@ -81,7 +129,7 @@ export const DynamicContainer = styled.div`
   .static {
     font-size: 3rem;
     font-weight: 400;
-    color: #fff;
+    color: ${({ theme }) => theme.textPure};
     margin-right: 15px;
   }
 
