@@ -16,7 +16,7 @@ export function About() {
   return (
     <Container>
       <Title title="Sobre mim" description="Resumo" />
-      <section>
+      <section data-aos="fade-up">
         <img
           className={showImg ? 'picture' : ''}
           src={picture}

@@ -35,6 +35,7 @@ export const Container = styled.div<ContainerProps>`
       h1 {
         color: ${({ theme }) => theme.primary};
         font-size: 1.5rem;
+        text-shadow: 2px 2px 4px rgb(0 0 0 / 50%);
       }
       h2 {
         color: ${({ theme }) => theme.secondary};

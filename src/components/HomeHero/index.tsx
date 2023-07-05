@@ -17,7 +17,7 @@ function HomeHero() {
           alt="Meu Avatar"
         />
       </div>
-      <div>
+      <div data-aos="fade-up">
         <TextContainer>
           <h1>Olá</h1>
           <DynamicContainer>

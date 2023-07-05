@@ -22,7 +22,7 @@ function ProjectDetails({ status, setStatus }) {
         imgUrl="https://img.freepik.com/vetores-premium/projeto-de-construcao_24877-45619.jpg?w=2000"
       />
 
-      <main>
+      <main data-aos="fade-up">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
           placeat temporibus maxime tempora, quo dicta. Voluptate voluptatum

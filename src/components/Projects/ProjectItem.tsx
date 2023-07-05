@@ -14,7 +14,7 @@ const IMG =
 
 function ProjectItem({ title, type, pathId, imgURL }: Props) {
   return (
-    <ProjectContainer imgURL={imgURL || IMG}>
+    <ProjectContainer imgURL={imgURL || IMG} data-aos="fade-up">
       <section>
         <div className="overlay" />
         <div className="text">

@@ -8,7 +8,7 @@ interface ItemProps {
 
 function ExperienceItem({ year, status, description }: ItemProps) {
   return (
-    <ItemContainer>
+    <ItemContainer data-aos="fade-up">
       <div>
         <h1>{year}</h1>
         <h2>{status}</h2>
