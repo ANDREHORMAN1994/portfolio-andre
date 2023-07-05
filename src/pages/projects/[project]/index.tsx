@@ -1,8 +1,18 @@
+import { useEffect, useState } from 'react';
 import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
+import Loading from '../../../components/Loading';
 import { ProjectDetailsContainer } from './style';
 
 function ProjectDetails({ status, setStatus }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  if (loading) return <Loading />;
+
   return (
     <ProjectDetailsContainer>
       <Header status={status} setStatus={setStatus} />

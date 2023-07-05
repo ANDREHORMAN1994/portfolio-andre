@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 import { ProjectCard } from '../../components/ProjectCard';
 import { ProjectsContainer } from './styles';
 
@@ -34,6 +36,14 @@ const myProjetcs = [
 ];
 
 function Projects({ status, setStatus }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 2000);
+  }, []);
+
+  if (loading) return <Loading />;
+
   return (
     <ProjectsContainer>
       <Header status={status} setStatus={setStatus} />
