@@ -1,39 +1,10 @@
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import { ProjectCard } from '../../components/ProjectCard';
+import myProjetcs from '../../utils/data';
 import { ProjectsContainer } from './styles';
-
-const myProjetcs = [
-  {
-    id: 0,
-    title: 'Projeto X',
-    type: 'Website',
-    imgUrl:
-      'https://img.freepik.com/vetores-premium/projeto-de-construcao_24877-45619.jpg?w=2000'
-  },
-  {
-    id: 1,
-    title: 'Projeto X',
-    type: 'Website',
-    imgUrl:
-      'https://img.freepik.com/vetores-premium/projeto-de-construcao_24877-45619.jpg?w=2000'
-  },
-  {
-    id: 2,
-    title: 'Projeto X',
-    type: 'Website',
-    imgUrl:
-      'https://img.freepik.com/vetores-premium/projeto-de-construcao_24877-45619.jpg?w=2000'
-  },
-  {
-    id: 3,
-    title: 'Projeto X',
-    type: 'Website',
-    imgUrl:
-      'https://img.freepik.com/vetores-premium/projeto-de-construcao_24877-45619.jpg?w=2000'
-  }
-];
 
 function Projects({ status, setStatus }) {
   const [loading, setLoading] = useState(true);
@@ -46,8 +17,23 @@ function Projects({ status, setStatus }) {
 
   return (
     <ProjectsContainer>
+      <Head>
+        <title>Projetos | Meu portfólio</title>
+        <meta
+          name="description"
+          content="Sou um desenvolvedor Web Full Stack e aqui apresento alguns projetos desenvolvidos por mim!"
+        />
+        <meta property="og:image" content="/images/ogimage.jpg" />
+        <meta property="og:image:secure_url" content="/images/ogimage.jpg" />
+        <meta name="twitter:image" content="/images/ogimage.jpg" />
+        <meta name="twitter:image:src" content="/images/ogimage.jpg" />
+        <meta
+          property="og:description"
+          content="Sou um desenvolvedor Web Full Stack e aqui apresento alguns projetos desenvolvidos por mim!"
+        />
+      </Head>
       <Header status={status} setStatus={setStatus} />
-      <main className="container">
+      <main className="container" data-aos="fade-up">
         {myProjetcs.map(({ id, title, type, imgUrl }) => (
           <ProjectCard key={id} title={title} type={type} imgUrl={imgUrl} />
         ))}

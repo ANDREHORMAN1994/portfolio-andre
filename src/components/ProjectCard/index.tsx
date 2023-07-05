@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, type, imgUrl }: ProjectCardProps) {
   return (
-    <Container imgUrl={imgUrl} data-aos="fade-up">
+    <Container imgUrl={imgUrl}>
       <Link href={`/projects/${title}`}>
         <a>
           <div className="overlay" />
