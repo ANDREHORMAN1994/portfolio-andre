@@ -1,5 +1,5 @@
 import 'styled-components';
-import { themeDark } from './theme';
+import { type themeDark } from './theme';
 
 // Define o tipo para os temas
 export type Theme = typeof themeDark;

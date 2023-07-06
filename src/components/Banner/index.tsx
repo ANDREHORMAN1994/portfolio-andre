@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Container } from './styles';
 
 interface BannerProps {
@@ -6,7 +7,7 @@ interface BannerProps {
   imgUrl: string;
 }
 
-export function Banner({ title, type, imgUrl }: BannerProps) {
+export function Banner({ title, type, imgUrl }: BannerProps): ReactNode {
   return (
     <Container imgUrl={imgUrl}>
       <div className="overlay" />

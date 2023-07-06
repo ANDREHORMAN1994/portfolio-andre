@@ -4,7 +4,7 @@ import { FaCss3Alt, FaDocker, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io5';
 import { SiJest, SiMongodb, SiRedux, SiTestinglibrary } from 'react-icons/si';
 import { TbBrandCypress } from 'react-icons/tb';
-import CarouselItem from './types';
+import { CarouselItem } from './types';
 
 const items: CarouselItem[] = [
   {

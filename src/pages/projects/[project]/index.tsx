@@ -1,5 +1,13 @@
+import { type GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import {
+  ReactNode,
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction
+} from 'react';
 import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
 import Loading from '../../../components/Loading';
@@ -13,22 +21,35 @@ interface ProjectInfoProps {
   description: string;
 }
 
-function ProjectDetails({ status, setStatus, project }) {
+interface ServerSideProps {
+  project: string;
+}
+
+interface DetailsProps extends ServerSideProps {
+  status: boolean;
+  setStatus: Dispatch<SetStateAction<boolean>>;
+}
+
+function ProjectDetails({
+  status,
+  setStatus,
+  project
+}: DetailsProps): ReactNode {
   const [loading, setLoading] = useState(true);
-  const [projectInfo, setProjectInfo] = useState<ProjectInfoProps>(null);
+  const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
 
   useEffect(() => {
     const newInfos = myProjetcs.find(({ title }) => title === project);
 
     setTimeout(() => {
-      if (newInfos) {
+      if (newInfos != null) {
         setProjectInfo(newInfos);
         setLoading(false);
       }
     }, 2000);
   }, []);
 
-  if (loading) return <Loading />;
+  if (loading || projectInfo == null) return <Loading />;
 
   const { title, type, imgUrl, description } = projectInfo;
 
@@ -49,19 +70,28 @@ function ProjectDetails({ status, setStatus, project }) {
       <main data-aos="fade-up">
         <p>{description}</p>
         <button type="button">
-          <a href="#">Ver Projeto 👀</a>
+          <Link href="#">Ver Projeto 👀</Link>
         </button>
       </main>
     </ProjectDetailsContainer>
   );
 }
 
-export async function getServerSideProps({ params: { project } }) {
+export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
+  params
+}) => {
+  if (params == null || typeof params.project !== 'string') {
+    return {
+      notFound: true
+    };
+  }
+
+  const { project } = params;
   return {
     props: {
       project
     }
   };
-}
+};
 
 export default ProjectDetails;

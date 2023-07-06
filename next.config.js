@@ -7,6 +7,5 @@ const env = dotenv.parse(fs.readFileSync('.env'));
 
 module.exports = withImages({
   reactStrictMode: true,
-  esModule: true,
-  env: env
+  env: env,
 });

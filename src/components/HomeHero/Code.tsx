@@ -1,13 +1,19 @@
+import { ReactNode } from 'react';
 import { CodeItem } from './styles';
 
 interface Props {
   text: string;
-  infos: [string, string | number][];
+  infos: Array<[string, string | number]>;
   showComments?: boolean;
   size: string;
 }
 
-function Code({ text, infos = [], showComments = false, size }: Props) {
+function Code({
+  text,
+  infos = [],
+  showComments = false,
+  size
+}: Props): ReactNode {
   return (
     <CodeItem size={size}>
       {showComments && <span className="comments">// Minha apresentação</span>}

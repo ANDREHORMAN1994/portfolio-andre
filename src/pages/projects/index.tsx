@@ -1,16 +1,29 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import {
+  ReactNode,
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction
+} from 'react';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import { ProjectCard } from '../../components/ProjectCard';
 import myProjetcs from '../../utils/data';
 import { ProjectsContainer } from './styles';
 
-function Projects({ status, setStatus }) {
+interface ProjectsProps {
+  status: boolean;
+  setStatus: Dispatch<SetStateAction<boolean>>;
+}
+
+function Projects({ status, setStatus }: ProjectsProps): ReactNode {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
 
   if (loading) return <Loading />;

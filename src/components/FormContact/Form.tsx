@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { FormContainer, Input, TextArea } from './styles';
 
-function Form() {
+function Form(): ReactNode {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
 
-  const handleValidation = () => {
+  const handleValidation = (): void => {
     const valName = name.length > 0;
     const valEmail = /^\w+@\w+\.\w+$/gm.test(email);
     const valMessage = message.length > 0;
     setIsDisabled(!(valName && valEmail && valMessage));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
 
     const whatsappMessage = `Olá, meu nome é ${name} e tenho uma mensagem para você: ${message}`;
@@ -31,18 +31,24 @@ function Form() {
       <Input
         type="text"
         placeholder="Nome"
-        onChange={({ target }) => setName(target.value)}
+        onChange={({ target }) => {
+          setName(target.value);
+        }}
         required
       />
       <Input
         type="email"
         placeholder="E-mail"
-        onChange={({ target }) => setEmail(target.value)}
+        onChange={({ target }) => {
+          setEmail(target.value);
+        }}
         required
       />
       <TextArea
         placeholder="Mensagem"
-        onChange={({ target }) => setMessage(target.value)}
+        onChange={({ target }) => {
+          setMessage(target.value);
+        }}
         required
       />
       <button type="submit" disabled={isDisabled}>

@@ -1,11 +1,12 @@
 import Document, {
-  DocumentContext,
-  DocumentInitialProps,
   Head,
   Html,
   Main,
-  NextScript
+  NextScript,
+  type DocumentContext,
+  type DocumentInitialProps
 } from 'next/document';
+import { ReactElement } from 'react';
 
 import { ServerStyleSheet } from 'styled-components';
 
@@ -17,8 +18,8 @@ export default class MyDocument extends Document {
     const originalRenderPage = ctx.renderPage;
 
     try {
-      ctx.renderPage = () =>
-        originalRenderPage({
+      ctx.renderPage = async () =>
+        await originalRenderPage({
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         });
 
@@ -37,7 +38,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <Html lang="pt-br">
         <Head>

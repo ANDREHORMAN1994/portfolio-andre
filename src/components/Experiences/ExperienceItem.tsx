@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { ItemContainer } from './styles';
 
 interface ItemProps {
@@ -6,7 +7,7 @@ interface ItemProps {
   description: string;
 }
 
-function ExperienceItem({ year, status, description }: ItemProps) {
+function ExperienceItem({ year, status, description }: ItemProps): ReactNode {
   return (
     <ItemContainer data-aos="fade-up">
       <div>

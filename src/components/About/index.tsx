@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { usePicture } from '../../hooks/usePicture';
 import Title from '../Title';
 import { Container, TextContainer } from './styles';
 
-export function About() {
+export function About(): ReactNode {
   const [showImg, setShowImg] = useState(false);
   const picture = usePicture();
 

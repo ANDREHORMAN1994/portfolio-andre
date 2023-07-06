@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 import { Container } from './styles';
 
@@ -7,7 +7,7 @@ interface TitleProps {
   description?: string | ReactNode;
 }
 
-function Title({ title, description }: TitleProps) {
+function Title({ title, description }: TitleProps): ReactNode {
   return (
     <Container data-aos="fade-right">
       <h1>{title}</h1>

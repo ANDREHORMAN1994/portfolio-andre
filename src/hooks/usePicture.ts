@@ -1,15 +1,16 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-export const usePicture = () => {
+export const usePicture = (): string => {
   const [picture, setPicture] = useState<string>('');
 
-  const requestUserGithub = async () => {
+  const requestUserGithub = async (): Promise<void> => {
     try {
       const endpoint = 'https://api.github.com/user';
+      const auth = process.env.TOKEN_GITHUB ?? '';
       const { data } = await axios.get(endpoint, {
         headers: {
-          Authorization: `Bearer ${process.env.TOKEN_GITHUB}`
+          Authorization: `Bearer ${auth}`
         }
       });
       if (data) {
@@ -21,7 +22,7 @@ export const usePicture = () => {
   };
 
   useEffect(() => {
-    requestUserGithub();
+    void requestUserGithub();
   }, [picture]);
 
   return picture;

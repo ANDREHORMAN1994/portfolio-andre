@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import { Container } from './styles';
 
 interface ProjectCardProps {
@@ -7,17 +8,19 @@ interface ProjectCardProps {
   imgUrl: string;
 }
 
-export function ProjectCard({ title, type, imgUrl }: ProjectCardProps) {
+export function ProjectCard({
+  title,
+  type,
+  imgUrl
+}: ProjectCardProps): ReactNode {
   return (
     <Container imgUrl={imgUrl}>
       <Link href={`/projects/${title}`}>
-        <a>
-          <div className="overlay" />
-          <section>
-            <h1>{title}</h1>
-            <h2>{type}</h2>
-          </section>
-        </a>
+        <div className="overlay" />
+        <section>
+          <h1>{title}</h1>
+          <h2>{type}</h2>
+        </section>
       </Link>
     </Container>
   );

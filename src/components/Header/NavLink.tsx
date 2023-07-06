@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ReactNode } from 'react';
 import { NavItemContainer } from './styles';
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
   includes?: boolean;
 }
 
-function NavLink({ title, path, includes = false }: Props) {
+function NavLink({ title, path, includes = false }: Props): ReactNode {
   const router = useRouter();
 
-  const verifyIsActive = () => {
+  const verifyIsActive = (): boolean => {
     if (includes) return router.pathname.includes(path);
     return path === router.pathname;
   };
@@ -20,9 +21,7 @@ function NavLink({ title, path, includes = false }: Props) {
 
   return (
     <NavItemContainer isActive={isActive}>
-      <Link href={path}>
-        <a>{title}</a>
-      </Link>
+      <Link href={path}>{title}</Link>
     </NavItemContainer>
   );
 }

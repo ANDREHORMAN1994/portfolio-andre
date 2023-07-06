@@ -46,7 +46,6 @@ export default createGlobalStyle`
   .container {
     width: 100%;
     margin: 0 auto;
-    /* align-self: center; */
     max-width: 85rem;
     padding: 0 1rem;
 

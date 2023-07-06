@@ -1,6 +1,7 @@
+import { ReactNode } from 'react';
 import { Container, SpinnerContainer } from './styles';
 
-function Loading() {
+function Loading(): ReactNode {
   return (
     <Container>
       <SpinnerContainer>

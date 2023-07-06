@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import Title from '../Title';
 import Form from './Form';
 import { Container } from './styles';
 
-export function FormContact() {
+export function FormContact(): ReactNode {
   return (
     <Container>
       <Title
