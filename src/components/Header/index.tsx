@@ -13,8 +13,10 @@ function Header({ status, setStatus }: HeaderProps): ReactNode {
   const [play] = useSound('/sounds/som-click.mp3');
 
   const handleClick = (): void => {
-    setStatus(!status);
-    play();
+    if (play) {
+      play();
+      setStatus(!status);
+    }
   };
 
   return (

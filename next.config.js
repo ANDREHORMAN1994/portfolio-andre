@@ -1,11 +1,4 @@
-const withImages = require('next-images');
 /** @type {import('next').NextConfig} */
-const fs = require('fs');
+const nextConfig = {}
 
-const dotenv = require('dotenv');
-const env = dotenv.parse(fs.readFileSync('.env'));
-
-module.exports = withImages({
-  reactStrictMode: true,
-  env: env,
-});
+module.exports = nextConfig
