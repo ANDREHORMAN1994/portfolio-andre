@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { Container } from './styles';
 
 interface ProjectCardProps {
@@ -12,7 +12,7 @@ export function ProjectCard({
   title,
   type,
   imgUrl
-}: ProjectCardProps): ReactNode {
+}: ProjectCardProps): ReactElement {
   return (
     <Container imgUrl={imgUrl}>
       <Link href={`/projects/${title}`}>

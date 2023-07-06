@@ -1,4 +1,4 @@
-import { ReactNode, type Dispatch, type SetStateAction } from 'react';
+import { ReactElement, type Dispatch, type SetStateAction } from 'react';
 import { GiDeskLamp, GiFlexibleLamp } from 'react-icons/gi';
 import useSound from 'use-sound';
 import NavLink from './NavLink';
@@ -9,14 +9,13 @@ interface HeaderProps {
   setStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-function Header({ status, setStatus }: HeaderProps): ReactNode {
+function Header({ status, setStatus }: HeaderProps): ReactElement {
   const [play] = useSound('/sounds/som-click.mp3');
 
-  const handleClick = (): void => {
-    if (play) {
-      play();
-      setStatus(!status);
-    }
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    play();
+    setStatus(!status);
   };
 
   return (
@@ -24,7 +23,13 @@ function Header({ status, setStatus }: HeaderProps): ReactNode {
       <nav>
         <NavLink path="/" title="Home" />
         <NavLink path="/projects" title="Projetos" includes />
-        <ButtonIcon status={status} type="button" onClick={handleClick}>
+        <ButtonIcon
+          status={status}
+          type="button"
+          onClick={e => {
+            handleClick(e);
+          }}
+        >
           {status ? <GiDeskLamp /> : <GiFlexibleLamp />}
         </ButtonIcon>
       </nav>

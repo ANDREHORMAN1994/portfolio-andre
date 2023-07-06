@@ -1,18 +1,18 @@
-import { type ReactNode } from 'react';
-import { Breakpoint, ReactElasticCarouselProps } from 'react-elastic-carousel';
+import { type ReactElement } from 'react';
+import { Breakpoint } from 'react-elastic-carousel';
 
 export interface CarouselItem {
   id?: number;
   title: string;
-  icon: ReactNode;
+  icon: ReactElement;
 }
 
 export interface Breaks extends Breakpoint {
   width: number;
 }
 
-export interface CustomCarouselProps extends ReactElasticCarouselProps {
+export interface CustomCarouselProps {
   breakPoints: Breaks[];
   isRTL: boolean;
-  children: ReactNode[];
+  children: ReactElement[];
 }

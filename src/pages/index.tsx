@@ -2,7 +2,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Head from 'next/head';
 import {
-  ReactNode,
+  ReactElement,
   useEffect,
   useState,
   type Dispatch,
@@ -24,7 +24,7 @@ interface HomeProps {
   setStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-function Home({ status, setStatus }: HomeProps): ReactNode {
+function Home({ status, setStatus }: HomeProps): ReactElement {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

@@ -1,20 +1,10 @@
-import { type ReactNode } from 'react';
-import Carousel from 'react-elastic-carousel';
+import { type ReactElement } from 'react';
 import Title from '../Title';
+import Carrousel from './Carrousel';
 import KnowledgeItem from './KnowledgeItem';
 import { Container } from './styles';
 import items from './technologies';
-import { Breaks } from './types';
-
-// const CustomCarousel: React.FC<CustomCarouselProps> = ({
-//   breakPoints,
-//   isRTL = false,
-//   children
-// }) => (
-//   <Carousel breakPoints={breakPoints} isRTL={isRTL}>
-//     {children}
-//   </Carousel>
-// );
+import { type Breaks } from './types';
 
 const breakPoints: Breaks[] = [
   { width: 1, itemsToShow: 1, itemsToScroll: 1 },
@@ -23,16 +13,16 @@ const breakPoints: Breaks[] = [
   { width: 1200, itemsToShow: 5, itemsToScroll: 5 }
 ];
 
-export function Knowledges(): ReactNode {
+export function Knowledges(): ReactElement {
   return (
     <Container>
       <Title title="Conhecimentos" description="Hard Skills" />
       <section>
-        <Carousel breakPoints={breakPoints} isRTL={false}>
+        <Carrousel breakPoints={breakPoints} isRTL={false}>
           {items.map(({ id, title, icon }) => (
             <KnowledgeItem key={id} title={title} icon={icon} />
           ))}
-        </Carousel>
+        </Carrousel>
       </section>
     </Container>
   );

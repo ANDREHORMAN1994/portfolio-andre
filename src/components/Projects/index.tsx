@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import Title from '../Title';
 import ProjectItem from './ProjectItem';
 import { Container } from './styles';
 
-export function Projects(): ReactNode {
+export function Projects(): ReactElement {
   return (
     <Container>
       <Title title="Projetos" description="desenvolvidos" />

@@ -1,10 +1,10 @@
-import { ReactElement, type ReactNode } from 'react';
+import { ReactElement } from 'react';
 
 import { Container } from './styles';
 
 interface TitleProps {
-  title: string | ReactNode;
-  description?: string | ReactNode;
+  title: string | ReactElement;
+  description?: string | ReactElement;
 }
 
 function Title({ title, description }: TitleProps): ReactElement {

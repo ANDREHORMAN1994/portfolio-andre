@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import Title from '../Title';
 import ExperienceItem from './ExperienceItem';
 import { Container } from './styles';
 
-export function Experiences(): ReactNode {
+export function Experiences(): ReactElement {
   return (
     <Container>
       <Title title="03 Anos" description="de experiência" />

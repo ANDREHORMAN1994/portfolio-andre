@@ -17,7 +17,7 @@
     "overrides": [],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "project": "tsconfig.json",
+        "project": "./tsconfig-eslint.json",
         "tsconfigRootDir": "./",
         "ecmaFeatures": {
             "jsx": true
@@ -43,6 +43,7 @@
         "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
         "import/no-named-as-default": "off",
-        "import/no-named-as-default-member": "off"
+        "import/no-named-as-default-member": "off",
+        "import/extensions": "off"
     }
 }

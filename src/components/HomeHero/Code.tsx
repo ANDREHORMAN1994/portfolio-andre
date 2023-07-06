@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { CodeItem } from './styles';
 
 interface Props {
@@ -13,7 +13,7 @@ function Code({
   infos = [],
   showComments = false,
   size
-}: Props): ReactNode {
+}: Props): ReactElement {
   return (
     <CodeItem size={size}>
       {showComments && <span className="comments">// Minha apresentação</span>}

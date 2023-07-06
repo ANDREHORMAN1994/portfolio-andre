@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
 import { FaWpforms } from 'react-icons/fa';
 import { Container } from './styles';
 
-export function Footer(): ReactNode {
+export function Footer(): ReactElement {
   const handleRedirect = (url: string): void => {
     window.open(url);
   };

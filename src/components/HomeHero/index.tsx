@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import Code from './Code';
 import {
   Container,
@@ -7,7 +7,7 @@ import {
   TextContainer
 } from './styles';
 
-function HomeHero(): ReactNode {
+function HomeHero(): ReactElement {
   return (
     <Container>
       <div className="pictures-container">

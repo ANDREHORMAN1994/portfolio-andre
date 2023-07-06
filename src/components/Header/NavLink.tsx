@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ReactNode } from 'react';
+import { ReactElement } from 'react';
 import { NavItemContainer } from './styles';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   includes?: boolean;
 }
 
-function NavLink({ title, path, includes = false }: Props): ReactNode {
+function NavLink({ title, path, includes = false }: Props): ReactElement {
   const router = useRouter();
 
   const verifyIsActive = (): boolean => {

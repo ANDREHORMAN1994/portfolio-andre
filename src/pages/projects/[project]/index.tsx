@@ -2,7 +2,7 @@ import { type GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import {
-  ReactNode,
+  ReactElement,
   useEffect,
   useState,
   type Dispatch,
@@ -12,7 +12,7 @@ import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
 import Loading from '../../../components/Loading';
 import myProjetcs from '../../../utils/data';
-import { ProjectDetailsContainer } from './style';
+import { ProjectDetailsContainer } from '@/styles/ProjectDetailsStyle';
 
 interface ProjectInfoProps {
   title: string;
@@ -34,7 +34,7 @@ function ProjectDetails({
   status,
   setStatus,
   project
-}: DetailsProps): ReactNode {
+}: DetailsProps): ReactElement {
   const [loading, setLoading] = useState(true);
   const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
 

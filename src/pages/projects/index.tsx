@@ -1,23 +1,23 @@
 import Head from 'next/head';
 import {
-  ReactNode,
+  ReactElement,
   useEffect,
   useState,
   type Dispatch,
   type SetStateAction
 } from 'react';
+import { ProjectsContainer } from '@/styles/ProjectsStyle';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import { ProjectCard } from '../../components/ProjectCard';
 import myProjetcs from '../../utils/data';
-import { ProjectsContainer } from './styles';
 
 interface ProjectsProps {
   status: boolean;
   setStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-function Projects({ status, setStatus }: ProjectsProps): ReactNode {
+function Projects({ status, setStatus }: ProjectsProps): ReactElement {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
