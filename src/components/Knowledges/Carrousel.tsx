@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactElasticCarousel from 'react-elastic-carousel';
-import { type CustomCarouselProps } from './types';
+import { CustomCarouselProps } from './types';
 
 const Carrousel: React.FC<CustomCarouselProps> = ({
   breakPoints,
   isRTL,
   children
-}) => (
-  <ReactElasticCarousel breakPoints={breakPoints} isRTL={isRTL}>
-    {children}
-  </ReactElasticCarousel>
-);
+}) => {
+  const carouselProps: CustomCarouselProps = {
+    breakPoints,
+    isRTL,
+    children
+  };
+
+  return <ReactElasticCarousel {...carouselProps} />;
+};
 
 export default Carrousel;
