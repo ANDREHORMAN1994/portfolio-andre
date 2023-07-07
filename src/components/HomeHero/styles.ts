@@ -109,8 +109,8 @@ export const Container = styled.div`
     flex-direction: column-reverse;
 
     > div.pictures-container {
-      width: 20rem;
-      height: 20rem;
+      width: 16rem;
+      height: 16rem;
 
       > img.picture {
         top: 0;

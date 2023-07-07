@@ -12,5 +12,9 @@ export interface Breaks extends Breakpoint {
 }
 
 export interface CustomCarouselProps extends ReactElasticCarouselProps {
+  breakPoints: Breaks[];
+  isRTL: boolean;
+  showArrows: boolean;
+  pagination: boolean;
   children: ReactElement[];
 }
