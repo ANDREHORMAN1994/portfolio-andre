@@ -1,3 +1,5 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Head from 'next/head';
 import {
   ReactElement,
@@ -21,6 +23,7 @@ function Projects({ status, setStatus }: ProjectsProps): ReactElement {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    Aos.init({ duration: 1500 });
     setTimeout(() => {
       setLoading(false);
     }, 2000);
