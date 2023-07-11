@@ -36,7 +36,7 @@ export const Container = styled.div`
 
     a {
       text-transform: uppercase;
-      color: ${({ theme }) => theme.textPure};
+      color: #fff;
       font-size: 1.5rem;
       font-weight: 300;
     }

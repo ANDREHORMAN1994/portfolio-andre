@@ -38,7 +38,7 @@ export const ProjectDetailsContainer = styled.div`
       }
 
       a {
-        color: ${({ theme }) => theme.textPure};
+        color: #fff;
         text-transform: uppercase;
         font-size: 1.5rem;
         font-weight: 300;

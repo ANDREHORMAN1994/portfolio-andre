@@ -44,6 +44,7 @@
         "@typescript-eslint/strict-boolean-expressions": "off",
         "import/no-named-as-default": "off",
         "import/no-named-as-default-member": "off",
-        "import/extensions": "off"
+        "import/extensions": "off",
+        "@typescript-eslint/no-misused-promises": "off"
     }
 }

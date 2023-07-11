@@ -60,7 +60,7 @@ function Home({ status, setStatus }: HomeProps): ReactElement {
         <Experiences />
         <Projects />
         <Knowledges />
-        <FormContact />
+        <FormContact status={status} />
       </main>
       <Footer />
     </HomeContainer>

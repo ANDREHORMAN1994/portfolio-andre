@@ -3,7 +3,11 @@ import Title from '../Title';
 import Form from './Form';
 import { Container } from './styles';
 
-export function FormContact(): ReactElement {
+interface FormsProps {
+  status: boolean;
+}
+
+export function FormContact({ status }: FormsProps): ReactElement {
   return (
     <Container>
       <Title
@@ -17,7 +21,7 @@ export function FormContact(): ReactElement {
         description="Entre em contato comigo 🤝"
       />
 
-      <Form />
+      <Form status={status} />
     </Container>
   );
 }
