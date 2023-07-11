@@ -6,11 +6,20 @@ interface SendContactEmailParams {
   message: string;
 }
 
+interface ContactResponse {
+  data: string;
+  status: number;
+}
+
+class ErrorForm extends Error {
+  response: ContactResponse | undefined;
+}
+
 const sendContactEmail = async ({
   name,
   senderMail,
   message
-}: SendContactEmailParams): Promise<AxiosResponse> => {
+}: SendContactEmailParams): Promise<AxiosResponse | ContactResponse> => {
   const infoBody = {
     name,
     senderMail,
@@ -21,9 +30,16 @@ const sendContactEmail = async ({
     const response = await axios.post('/api/contact', infoBody);
     // console.log(response, 'TRY');
     return response;
-  } catch ({ response }: any) {
-    // console.log(response, 'CATCH');
-    return response;
+  } catch (error: unknown) {
+    if (error instanceof ErrorForm && error.response) {
+      const { response } = error;
+      // console.log(response, 'CATCH');
+      return response;
+    }
+    return {
+      data: '🚨 Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente! 😓',
+      status: 403
+    };
   }
 };
 

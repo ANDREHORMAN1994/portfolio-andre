@@ -29,20 +29,20 @@ function Form({ status }: FormsProps): ReactElement {
     );
   };
 
+  const verifyBackground = (http: number, theme: typeof themeDark): string =>
+    http !== 200 ? theme.error : theme.primary;
+
   const handleFormSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
+    setIsDisabled(true);
 
     if (contactMethod === 'email') {
-      const { data, status: httpStatus } = await sendContactEmail({
-        name,
-        senderMail: email,
-        message
-      });
-
-      const verifyBackground = (
-        http: number,
-        theme: typeof themeDark
-      ): string => (http !== 200 ? theme.error : theme.primary);
+      const { data, status: httpStatus }: { data: string; status: number } =
+        await sendContactEmail({
+          name,
+          senderMail: email,
+          message
+        });
 
       toast(data, {
         style: {
@@ -57,6 +57,9 @@ function Form({ status }: FormsProps): ReactElement {
         setName('');
         setEmail('');
         setMessage('');
+        setIsDisabled(true);
+      } else {
+        setIsDisabled(false);
       }
     } else {
       const whatsappMessage = `Olá, meu nome é ${name} e tenho uma mensagem para você: ${message}`;
@@ -64,6 +67,7 @@ function Form({ status }: FormsProps): ReactElement {
       // Exemplo: abrir uma nova janela com o link do WhatsApp
       const encodedMessage = encodeURIComponent(whatsappMessage);
       window.open(`https://wa.me/5583993638760?text=${encodedMessage}`);
+      setIsDisabled(false);
     }
   };
 

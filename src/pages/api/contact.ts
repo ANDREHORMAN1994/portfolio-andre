@@ -62,7 +62,7 @@ const emailController = async (
     res
       .status(403)
       .send(
-        'Ocorreu um erro ao tentar enviar sua mensagem 🚨. Tente novamente! 😓'
+        '🚨 Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente! 😓'
       );
     return;
   }
