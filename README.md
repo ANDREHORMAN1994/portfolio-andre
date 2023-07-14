@@ -12,7 +12,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus proje
 
  > Atualmente, estou focado em aprimorar minhas habilidades como desenvolvedor Full Stack, com o objetivo de obter novas experiências que possam contribuir para meu futuro. 🚀
 
-`OBS: *Segue também meu [currículo](https://resume.io/r/5XOjVWyDz) para maior visibilidade 😉*`
+`OBS:` *Segue também meu [currículo](https://resume.io/r/5XOjVWyDz) para maior visibilidade 😉*
 
 Este repositório é destinado ao meu portfólio pessoal e aos projetos que desenvolvi ao longo dos meus estudos.
 
