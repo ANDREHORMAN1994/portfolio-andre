@@ -4,15 +4,15 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus proje
 
 ### Sobre Mim
 
-**Contando um pouquinho sobre mim:**
+ - **Contando um pouquinho sobre mim:**
 
  > Olá! Meu nome é [André](https://www.linkedin.com/in/andrehorman/), tenho 28 anos e sou formado em Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus estudos em meados de 2020 e desde então me apaixonei pela área de tecnologia. 💚 Após uma grande transição de carreira, tive o prazer de atuar como instrutor de tecnologia Front End durante dois anos, auxiliando e educando estudantes no campo do desenvolvimento web. 👨‍💻
 
-**Meu objetivo:**
+ - **Meu objetivo:**
 
  > Atualmente, estou focado em aprimorar minhas habilidades como desenvolvedor Full Stack, com o objetivo de obter novas experiências que possam contribuir para meu futuro. 🚀
 
-`OBS:` *Segue também meu [currículo](https://resume.io/r/5XOjVWyDz) para maior visibilidade 😉*
+`OBS: *Segue também meu [currículo](https://resume.io/r/5XOjVWyDz) para maior visibilidade 😉*`
 
 Este repositório é destinado ao meu portfólio pessoal e aos projetos que desenvolvi ao longo dos meus estudos.
 
