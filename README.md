@@ -2,7 +2,7 @@
 
 Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus projetos, habilidades e experiências. Sou um desenvolvedor Web Full Stack, apaixonado pela área e comprometido em entregar resultados excepcionais.
 
-### Sobre Mim
+### 👨‍💻 Sobre Mim
 
  - **Contando um pouquinho sobre mim:**
 
@@ -19,7 +19,7 @@ Este repositório é destinado ao meu portfólio pessoal e aos projetos que dese
 #### Acesse meu Portfólio _[AQUI](https://portfolio-andre-horman.vercel.app/)_
 
 
-### Tecnologias e Bibliotecas Utilizadas
+### 💻 Tecnologias e Bibliotecas Utilizadas
 
  - **Next.js:**
  > Escolhi utilizar o framework Next.js para o desenvolvimento deste projeto. O Next.js é uma ferramenta poderosa para construção de aplicações web modernas, fornecendo recursos avançados de renderização, roteamento e pré-renderização, o que resulta em uma experiência de usuário rápida e otimizada.
@@ -41,11 +41,11 @@ Este repositório é destinado ao meu portfólio pessoal e aos projetos que dese
 
 Essas foram as principais tecnologias e bibliotecas utilizadas neste projeto. Cada uma delas desempenhou um papel importante no desenvolvimento e contribuiu para a construção de um aplicativo melhor.
 
-### Contato
+### 📞 Contato
 
 Se você estiver interessado em colaborar em projetos interessantes ou tiver alguma pergunta, sinta-se à vontade para entrar em contato comigo pelos seguintes meios:
 
- - **E-mail**: `andre.horman1994@hotmail.com`
+ - **E-mail**: `andre.horman1994@hotmail.com` 
  - **LinkedIn**: `https://www.linkedin.com/in/andrehorman/`
  - **GitHub**: `https://github.com/ANDREHORMAN1994`
 
