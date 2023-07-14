@@ -37,29 +37,32 @@ function Form({ status }: FormsProps): ReactElement {
     setIsDisabled(true);
 
     if (contactMethod === 'email') {
-      const { data, status: httpStatus }: { data: string; status: number } =
-        await sendContactEmail({
-          name,
-          senderMail: email,
-          message
+      try {
+        const { data, status: httpStatus }: { data: string; status: number } =
+          await sendContactEmail({
+            name,
+            senderMail: email,
+            message
+          });
+
+        toast(data, {
+          style: {
+            background: status
+              ? verifyBackground(httpStatus, themeLight)
+              : verifyBackground(httpStatus, themeDark),
+            color: '#fff'
+          }
         });
-
-      toast(data, {
-        style: {
-          background: status
-            ? verifyBackground(httpStatus, themeLight)
-            : verifyBackground(httpStatus, themeDark),
-          color: '#fff'
+        if (httpStatus === 200) {
+          setName('');
+          setEmail('');
+          setMessage('');
+          setIsDisabled(true);
+        } else {
+          setIsDisabled(false);
         }
-      });
-
-      if (httpStatus === 200) {
-        setName('');
-        setEmail('');
-        setMessage('');
-        setIsDisabled(true);
-      } else {
-        setIsDisabled(false);
+      } catch (error) {
+        // console.log(error);
       }
     } else {
       const whatsappMessage = `Olá, meu nome é ${name} e tenho uma mensagem para você: ${message}`;
