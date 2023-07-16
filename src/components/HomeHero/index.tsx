@@ -11,10 +11,10 @@ function HomeHero(): ReactElement {
   return (
     <Container>
       <div className="pictures-container">
-        <img className="picture" src="/images/Avatar.png" alt="Meu Avatar" />
+        <img className="picture" src="/images/avatar.png" alt="Meu Avatar" />
         <img
           className="picture"
-          src="/images/React-Logo.png"
+          src="/images/react-logo.png"
           alt="Meu Avatar"
         />
       </div>

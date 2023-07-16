@@ -16,7 +16,7 @@ export const usePicture = (): string => {
     //     }
     //   } catch (error) {
     //     console.log(error, 'deu ruim');
-    //     setPicture('/images/myPerfil.png');
+    //     setPicture('/images/my-perfil.png');
     //   }
     // };
     // void requestUserGithub();

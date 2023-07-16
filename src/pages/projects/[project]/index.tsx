@@ -1,4 +1,5 @@
 import { type GetServerSideProps } from 'next';
+import { AiFillGithub } from 'react-icons/ai';
 import Head from 'next/head';
 import Link from 'next/link';
 import {
@@ -8,17 +9,20 @@ import {
   type Dispatch,
   type SetStateAction
 } from 'react';
+import { ProjectDetailsContainer } from '@/styles/ProjectDetailsStyle';
 import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
 import Loading from '../../../components/Loading';
 import myProjetcs from '../../../utils/data';
-import { ProjectDetailsContainer } from '@/styles/ProjectDetailsStyle';
 
 interface ProjectInfoProps {
   title: string;
   type: string;
   imgUrl: string;
   description: string;
+  link: string;
+  techs: string[];
+  repo: string;
 }
 
 interface ServerSideProps {
@@ -51,7 +55,15 @@ function ProjectDetails({
 
   if (loading || projectInfo == null) return <Loading />;
 
-  const { title, type, imgUrl, description } = projectInfo;
+  const { title, type, imgUrl, description, link, techs, repo } = projectInfo;
+
+  const verifyIndex = (index: number): string => {
+    const lastIndexList = techs.length - 1;
+    if (index === lastIndexList && index % 2 === 0) {
+      return 'li-complete';
+    }
+    return '';
+  };
 
   return (
     <ProjectDetailsContainer>
@@ -69,9 +81,24 @@ function ProjectDetails({
 
       <main data-aos="fade-up">
         <p>{description}</p>
-        <button type="button">
-          <Link href="#">Ver Projeto 👀</Link>
-        </button>
+        <h2>Tecnologias e Bibliotecas Utilizadas 👨‍💻</h2>
+        <ul>
+          {techs.map((tech, index) => (
+            <li className={verifyIndex(index)}>{tech}</li>
+          ))}
+        </ul>
+        <div>
+          <button type="button">
+            <Link href={link} target="_blank">
+              Ver Projeto 👀
+            </Link>
+          </button>
+          <button type="button">
+            <Link href={repo} target="_blank">
+              <AiFillGithub />
+            </Link>
+          </button>
+        </div>
       </main>
     </ProjectDetailsContainer>
   );
