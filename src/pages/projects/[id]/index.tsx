@@ -26,7 +26,7 @@ interface ProjectInfoProps {
 }
 
 interface ServerSideProps {
-  project: string;
+  id: string;
 }
 
 interface DetailsProps extends ServerSideProps {
@@ -34,16 +34,14 @@ interface DetailsProps extends ServerSideProps {
   setStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-function ProjectDetails({
-  status,
-  setStatus,
-  project
-}: DetailsProps): ReactElement {
+function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
   const [loading, setLoading] = useState(true);
   const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
 
   useEffect(() => {
-    const newInfos = myProjetcs.find(({ title }) => title === project);
+    const newInfos = myProjetcs.find(
+      project => Number(project.id) === Number(id)
+    );
 
     setTimeout(() => {
       if (newInfos != null) {
@@ -81,7 +79,7 @@ function ProjectDetails({
 
       <main data-aos="fade-up">
         <p>{description}</p>
-        <h2>Tecnologias e Bibliotecas Utilizadas 👨‍💻</h2>
+        <h2>Tecnologias Utilizadas 👨‍💻</h2>
         <ul>
           {techs.map((tech, index) => (
             <li className={verifyIndex(index)}>{tech}</li>
@@ -107,16 +105,16 @@ function ProjectDetails({
 export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
   params
 }) => {
-  if (params == null || typeof params.project !== 'string') {
+  if (params == null || typeof params.id !== 'string') {
     return {
       notFound: true
     };
   }
 
-  const { project } = params;
+  const { id } = params;
   return {
     props: {
-      project
+      id
     }
   };
 };

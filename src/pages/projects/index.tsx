@@ -51,7 +51,13 @@ function Projects({ status, setStatus }: ProjectsProps): ReactElement {
       <Header status={status} setStatus={setStatus} />
       <main className="container" data-aos="fade-up">
         {myProjetcs.map(({ id, title, type, imgUrl }) => (
-          <ProjectCard key={id} title={title} type={type} imgUrl={imgUrl} />
+          <ProjectCard
+            key={id}
+            id={id}
+            title={title}
+            type={type}
+            imgUrl={imgUrl}
+          />
         ))}
       </main>
     </ProjectsContainer>

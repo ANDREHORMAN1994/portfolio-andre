@@ -296,6 +296,12 @@ export const CodeItem = styled.section<CodeItemProps>`
     }
   }
 
+  @media (max-width: 700px) {
+    animation: none;
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
   &:last-child {
     align-self: flex-end;
     margin-right: 50px;
