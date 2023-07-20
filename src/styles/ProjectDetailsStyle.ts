@@ -6,7 +6,7 @@ export const ProjectDetailsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 
   > main {
@@ -23,6 +23,7 @@ export const ProjectDetailsContainer = styled.div`
       font-size: 1.5rem;
       font-weight: 300;
       text-align: justify;
+      width: 100%;
     }
 
     > h2 {
@@ -41,6 +42,7 @@ export const ProjectDetailsContainer = styled.div`
       align-items: center;
       gap: 1rem;
       margin: 1rem 0;
+      width: 100%;
 
       > li {
         color: #fff;

@@ -1,3 +1,5 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import { type GetServerSideProps } from 'next';
 import { AiFillGithub } from 'react-icons/ai';
 import Head from 'next/head';
@@ -39,6 +41,7 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
   const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
 
   useEffect(() => {
+    Aos.init({ duration: 1500 });
     const newInfos = myProjetcs.find(
       project => Number(project.id) === Number(id)
     );
@@ -79,8 +82,8 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
 
       <main data-aos="fade-up">
         <p>{description}</p>
-        <h2>Tecnologias Utilizadas 👨‍💻</h2>
-        <ul>
+        <h2 data-aos="fade-right">Tecnologias Utilizadas 👨‍💻</h2>
+        <ul data-aos="fade-up">
           {techs.map((tech, index) => (
             <li className={verifyIndex(index)}>{tech}</li>
           ))}
