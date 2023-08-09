@@ -36,9 +36,9 @@ const myProjetcs = [
       'Bcrypt',
       'Json Web Token (JWT)',
       'Swagger',
-      'Railway'
+      'Render'
     ],
-    link: 'https://slido-api-production.up.railway.app/',
+    link: 'https://slido-api.onrender.com/',
     repo: 'https://github.com/ANDREHORMAN1994/slido-API'
   }
 ];
