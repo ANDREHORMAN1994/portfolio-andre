@@ -1,7 +1,7 @@
 const myProjetcs = [
   {
     id: 0,
-    title: 'HAPPY 😃',
+    title: 'HAPPY 😁',
     type: 'Web Site',
     imgUrl: '/images/happy-app.png',
     description: `O Happy é uma aplicação Desktop desenvolvida para facilitar a integração entre a comunidade e lares de acolhimento. Essa plataforma permite que os usuários busquem locais cadastrados em um mapa interativo fornecido pelo Leaflet. Além disso, os usuários têm a possibilidade de adicionar informações como horários de atendimento, descrição para público alvo, localização e instruções para visita. Tudo sendo conectado com um banco de dados PostgreSQL.`,

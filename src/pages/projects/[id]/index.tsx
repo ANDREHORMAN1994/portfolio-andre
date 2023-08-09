@@ -11,6 +11,7 @@ import {
   type Dispatch,
   type SetStateAction
 } from 'react';
+// import sdk from '@stackblitz/sdk';
 import { ProjectDetailsContainer } from '@/styles/ProjectDetailsStyle';
 import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
@@ -39,6 +40,23 @@ interface DetailsProps extends ServerSideProps {
 function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
   const [loading, setLoading] = useState(true);
   const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
+
+  // const openProject = (): void => {
+  //   const url = 'stackblitz-starters-duehlx';
+
+  //   sdk.embedProjectId('embed', url, {
+  //     forceEmbedLayout: true,
+  //     openFile: 'src/app.js',
+  //     view: 'editor',
+  //     hideExplorer: true
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   if (!loading) {
+  //     openProject();
+  //   }
+  // }, [loading]);
 
   useEffect(() => {
     Aos.init({ duration: 1500 });
@@ -100,6 +118,11 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
             </Link>
           </button>
         </div>
+        {/* {!loading && (
+          <div id="embed">
+            <p>Embed will go here</p>
+          </div>
+        )} */}
       </main>
     </ProjectDetailsContainer>
   );
