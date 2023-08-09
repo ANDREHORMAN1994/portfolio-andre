@@ -82,7 +82,7 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
 
       <main data-aos="fade-up">
         <p>{description}</p>
-        <h2 data-aos="fade-right">Tecnologias Utilizadas 👨‍💻</h2>
+        <h2 data-aos="fade-up">Tecnologias Utilizadas 👨‍💻</h2>
         <ul data-aos="fade-up">
           {techs.map((tech, index) => (
             <li className={verifyIndex(index)}>{tech}</li>
