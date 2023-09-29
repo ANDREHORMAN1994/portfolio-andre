@@ -1,6 +1,23 @@
 const myProjetcs = [
   {
     id: 0,
+    title: 'PIXEL ART GAME 🎨',
+    type: 'Web Site',
+    imgUrl: '/images/pixel-art-game.png',
+    description: `O Pixel Art Game é um jogo desenvolvido para plataformas Desktop e Mobile que proporciona aos jogadores a experiência única de criar pinturas em estilo de 8 ou 16 bits. Agora, você pode elevar o desafio ao pintar quadros pixelados o mais rápido possível, com base em pinturas de referência, visando conquistar mais pontos. Sua pontuação será exibida na tela de classificação, incentivando a competição e o aprimoramento constante.`,
+    techs: [
+      'React JS',
+      'Redux Toolkit',
+      'Styled Components',
+      'Material UI',
+      'EsLint',
+      'Vercel'
+    ],
+    link: 'https://pixel-art-game-andre-horman.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/pixel-art-game'
+  },
+  {
+    id: 1,
     title: 'HAPPY 😁',
     type: 'Web Site',
     imgUrl: '/images/happy-app.png',
@@ -22,7 +39,7 @@ const myProjetcs = [
     repo: 'https://github.com/ANDREHORMAN1994/happy-app'
   },
   {
-    id: 1,
+    id: 2,
     title: 'SLIDO API 🥳',
     type: 'API Node JS',
     imgUrl: '/images/slido-api.png',
@@ -36,27 +53,10 @@ const myProjetcs = [
       'Bcrypt',
       'Json Web Token (JWT)',
       'Swagger',
-      'Render'
-    ],
-    link: 'https://slido-api.onrender.com/',
-    repo: 'https://github.com/ANDREHORMAN1994/slido-API'
-  },
-  {
-    id: 2,
-    title: 'PIXEL ART GAME 🎨',
-    type: 'Web Site',
-    imgUrl: '/images/pixel-art-game.png',
-    description: `O Pixel Art Game é um jogo desenvolvido para plataformas Desktop e Mobile que proporciona aos jogadores a experiência única de criar pinturas em estilo de 8 ou 16 bits. Agora, você pode elevar o desafio ao pintar quadros pixelados o mais rápido possível, com base em pinturas de referência, visando conquistar mais pontos. Sua pontuação será exibida na tela de classificação, incentivando a competição e o aprimoramento constante.`,
-    techs: [
-      'React JS',
-      'Redux Toolkit',
-      'Styled Components',
-      'Material UI',
-      'EsLint',
       'Vercel'
     ],
-    link: 'https://pixel-art-game-andre-horman.vercel.app/',
-    repo: 'https://github.com/ANDREHORMAN1994/pixel-art-game'
+    link: 'https://slido-api.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/slido-API'
   }
 ];
 
