@@ -33,9 +33,9 @@ const myProjetcs = [
       'Leaflet',
       'Prisma',
       'PostgreSQL',
-      'Render'
+      'Vercel'
     ],
-    link: 'https://happy-app-andre-horman.onrender.com/',
+    link: 'https://happy-app-andre-horman.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/happy-app'
   },
   {
