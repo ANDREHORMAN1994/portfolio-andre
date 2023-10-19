@@ -1,6 +1,16 @@
 const myProjetcs = [
   {
     id: 0,
+    title: 'POKÉDEX VANILLA',
+    type: 'Web Site',
+    imgUrl: '/images/pokedex-vanilla.png',
+    description: `A Pokédex Vanilla é uma aplicação Web desenvolvida com HTML5, CSS3 e JavaScript. Ela permite que os usuários visualizem informações sobre os 151 primeiros Pokémon, como nome, tipo, altura, peso e habilidades.`,
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+    link: 'https://pokedex-vanilla-andre-horman.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/pokedex-vanilla'
+  },
+  {
+    id: 1,
     title: 'PIXEL ART GAME 🎨',
     type: 'Web Site',
     imgUrl: '/images/pixel-art-game.png',
@@ -17,7 +27,7 @@ const myProjetcs = [
     repo: 'https://github.com/ANDREHORMAN1994/pixel-art-game'
   },
   {
-    id: 1,
+    id: 2,
     title: 'HAPPY 😁',
     type: 'Web Site',
     imgUrl: '/images/happy-app.png',
@@ -39,7 +49,7 @@ const myProjetcs = [
     repo: 'https://github.com/ANDREHORMAN1994/happy-app'
   },
   {
-    id: 2,
+    id: 3,
     title: 'SLIDO API 🥳',
     type: 'API Node JS',
     imgUrl: '/images/slido-api.png',
