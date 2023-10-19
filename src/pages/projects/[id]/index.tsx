@@ -26,6 +26,7 @@ interface ProjectInfoProps {
   link: string;
   techs: string[];
   repo: string;
+  icon?: string | null;
 }
 
 interface ServerSideProps {
@@ -74,7 +75,8 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
 
   if (loading || projectInfo == null) return <Loading />;
 
-  const { title, type, imgUrl, description, link, techs, repo } = projectInfo;
+  const { title, type, imgUrl, description, link, techs, repo, icon } =
+    projectInfo;
 
   const verifyIndex = (index: number): string => {
     const lastIndexList = techs.length - 1;
@@ -96,7 +98,7 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
         <meta property="og:description" content={description} />
       </Head>
       <Header status={status} setStatus={setStatus} />
-      <Banner title={title} type={type} imgUrl={imgUrl} />
+      <Banner title={title} icon={icon} type={type} imgUrl={imgUrl} />
 
       <main data-aos="fade-up">
         <p>{description}</p>

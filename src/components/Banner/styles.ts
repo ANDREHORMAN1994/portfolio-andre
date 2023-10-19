@@ -20,6 +20,16 @@ export const Container = styled.div<ContainerProps>`
     h1 {
       color: ${({ theme }) => theme.primary};
       font-size: 3rem;
+
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      > img {
+        width: 3rem;
+      }
     }
     h2 {
       color: ${({ theme }) => theme.secondary};

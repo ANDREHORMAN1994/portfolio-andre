@@ -17,6 +17,7 @@ export function Projects(): ReactElement {
             type={project.type}
             pathId={project.id.toString()}
             imgURL={project.imgUrl}
+            icon={project.icon}
           />
         ))}
       </section>

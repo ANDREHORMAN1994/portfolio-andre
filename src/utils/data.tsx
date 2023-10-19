@@ -1,7 +1,8 @@
 const myProjetcs = [
   {
     id: 0,
-    title: 'POKÉDEX VANILLA',
+    title: 'POKÉDEX',
+    icon: '/images/pokeball.svg',
     type: 'Web Site',
     imgUrl: '/images/pokedex-vanilla.png',
     description: `A Pokédex Vanilla é uma aplicação Web desenvolvida com HTML5, CSS3 e JavaScript. Ela permite que os usuários visualizem informações sobre os 151 primeiros Pokémon, como nome, tipo, altura, peso e habilidades.`,

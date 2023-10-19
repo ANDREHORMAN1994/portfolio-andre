@@ -101,6 +101,16 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
         color: ${({ theme }) => theme.primary};
         font-size: 2.5rem;
         /* text-shadow: -4px 5px 22px #11172b; */
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+
+        > img {
+          width: 2.5rem;
+        }
       }
 
       h2 {

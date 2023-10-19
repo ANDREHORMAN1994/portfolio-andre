@@ -36,6 +36,15 @@ export const Container = styled.div<ContainerProps>`
         color: ${({ theme }) => theme.primary};
         font-size: 1.5rem;
         text-shadow: 2px 2px 4px rgb(0 0 0 / 50%);
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+
+        > img {
+          width: 1.5rem;
+        }
       }
       h2 {
         color: ${({ theme }) => theme.secondary};
