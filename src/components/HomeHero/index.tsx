@@ -45,7 +45,7 @@ function HomeHero(): ReactElement {
             infos={[
               ['name', '"André"'],
               ['lastName', '"Horman"'],
-              ['age', 28],
+              ['age', 29],
               ['vocation', '"Dev Full-Stack"']
             ]}
           />
