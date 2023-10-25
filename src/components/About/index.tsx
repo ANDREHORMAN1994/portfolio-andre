@@ -24,7 +24,7 @@ export function About(): ReactElement {
         />
         <TextContainer>
           <p>
-            Olá! Meu nome é André, tenho 28 anos e sou formado em
+            Olá! Meu nome é André, tenho 29 anos e sou formado em
             Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus
             estudos em meados de 2020 e desde então me apaixonei pela área. Tive
             o prazer de atuar como instrutor de tecnologia Front End durante
