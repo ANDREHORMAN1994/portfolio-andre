@@ -10,7 +10,7 @@ export function Projects(): ReactElement {
     <Container>
       <Title title="Projetos" description="desenvolvidos" />
       <section>
-        {myProjetcs.map(project => (
+        {myProjetcs.slice(0, 3).map(project => (
           <ProjectItem
             key={project.id}
             title={project.title}

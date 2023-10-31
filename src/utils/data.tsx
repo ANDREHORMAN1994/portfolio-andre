@@ -1,17 +1,35 @@
 const myProjetcs = [
   {
     id: 0,
-    title: 'POKÉDEX',
-    icon: '/images/pokeball.svg',
+    title: 'CLONE GPT',
+    icon: '/images/bot.svg',
     type: 'Web Site',
-    imgUrl: '/images/pokedex-vanilla.png',
-    description: `A Pokédex Vanilla é uma aplicação Web desenvolvida com HTML5, CSS3 e JavaScript. Ela permite que os usuários visualizem informações sobre os 151 primeiros Pokémon, como nome, tipo, altura, peso e habilidades.`,
-    techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
-    link: 'https://pokedex-vanilla-andre-horman.vercel.app/',
-    repo: 'https://github.com/ANDREHORMAN1994/pokedex-vanilla'
+    imgUrl: '/images/clone-gpt.png',
+    description: `O Clone GPT é uma aplicação desenvolvida em Next JS utilizando a API da OpenAI para gerar textos de maneira natural. O intuito é que o usuário possa conversar com o bot, fazendo perguntas e recebendo respostas.`,
+    techs: ['Next JS', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Vercel'],
+    link: 'https://clone-gpt-openai.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/clone-gpt'
   },
   {
     id: 1,
+    title: 'WEBCAM EMOTIONS',
+    icon: '/images/cam.svg',
+    type: 'Web Site',
+    imgUrl: '/images/webcam-emotions.png',
+    description: `A WebCam Emotions é uma aplicação desenvolvida em React JS utilizando a Face API para reconhecimento facial. Com esta aplicação, você poderá ver em tempo real, por meio de sua webcam, como as expressões faciais se relacionam com diferentes emoções, como felicidade, tristeza, surpresa e raiva.`,
+    techs: [
+      'React JS',
+      'JavaScript',
+      'Styled Components',
+      'React WebCam',
+      'Face API',
+      'Vercel'
+    ],
+    link: 'https://webcam-emotions.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/webcam-emotions'
+  },
+  {
+    id: 2,
     title: 'PIXEL ART GAME 🎨',
     type: 'Web Site',
     imgUrl: '/images/pixel-art-game.png',
@@ -28,7 +46,18 @@ const myProjetcs = [
     repo: 'https://github.com/ANDREHORMAN1994/pixel-art-game'
   },
   {
-    id: 2,
+    id: 3,
+    title: 'POKÉDEX',
+    icon: '/images/pokeball.svg',
+    type: 'Web Site',
+    imgUrl: '/images/pokedex-vanilla.png',
+    description: `A Pokédex Vanilla é uma aplicação Web desenvolvida com HTML5, CSS3 e JavaScript. Ela permite que os usuários visualizem informações sobre os 151 primeiros Pokémon, como nome, tipo, altura, peso e habilidades.`,
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+    link: 'https://pokedex-vanilla-andre-horman.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/pokedex-vanilla'
+  },
+  {
+    id: 4,
     title: 'HAPPY 😁',
     type: 'Web Site',
     imgUrl: '/images/happy-app.png',
@@ -50,7 +79,7 @@ const myProjetcs = [
     repo: 'https://github.com/ANDREHORMAN1994/happy-app'
   },
   {
-    id: 3,
+    id: 5,
     title: 'SLIDO API 🥳',
     type: 'API Node JS',
     imgUrl: '/images/slido-api.png',
