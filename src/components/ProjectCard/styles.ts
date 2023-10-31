@@ -34,7 +34,7 @@ export const Container = styled.div<ContainerProps>`
       z-index: 2;
       h1 {
         color: ${({ theme }) => theme.primary};
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         text-shadow: 2px 2px 4px rgb(0 0 0 / 50%);
         display: flex;
         flex-flow: row nowrap;

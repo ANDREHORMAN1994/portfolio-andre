@@ -1,17 +1,6 @@
 const myProjetcs = [
   {
     id: 0,
-    title: 'CLONE GPT',
-    icon: '/images/bot.svg',
-    type: 'Web Site',
-    imgUrl: '/images/clone-gpt.png',
-    description: `O Clone GPT é uma aplicação desenvolvida em Next JS utilizando a API da OpenAI para gerar textos de maneira natural. O intuito é que o usuário possa conversar com o bot, fazendo perguntas e recebendo respostas.`,
-    techs: ['Next JS', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Vercel'],
-    link: 'https://clone-gpt-openai.vercel.app/',
-    repo: 'https://github.com/ANDREHORMAN1994/clone-gpt'
-  },
-  {
-    id: 1,
     title: 'WEBCAM EMOTIONS',
     icon: '/images/cam.svg',
     type: 'Web Site',
@@ -27,6 +16,17 @@ const myProjetcs = [
     ],
     link: 'https://webcam-emotions.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/webcam-emotions'
+  },
+  {
+    id: 1,
+    title: 'CLONE GPT',
+    icon: '/images/bot.svg',
+    type: 'Web Site',
+    imgUrl: '/images/clone-gpt.png',
+    description: `O Clone GPT é uma aplicação desenvolvida em Next JS utilizando a API da OpenAI para gerar textos de maneira natural. O intuito é que o usuário possa conversar com o bot, fazendo perguntas e recebendo respostas.`,
+    techs: ['Next JS', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Vercel'],
+    link: 'https://clone-gpt-openai.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/clone-gpt'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const myProjetcs = [
   },
   {
     id: 3,
-    title: 'POKÉDEX',
+    title: 'POKÉDEX VANILLA',
     icon: '/images/pokeball.svg',
     type: 'Web Site',
     imgUrl: '/images/pokedex-vanilla.png',
