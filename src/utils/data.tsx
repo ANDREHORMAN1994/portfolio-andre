@@ -97,6 +97,17 @@ const myProjetcs = [
     ],
     link: 'https://slido-api.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/slido-API'
+  },
+  {
+    id: 6,
+    title: 'MEMORY GAME DBZ',
+    icon: '/images/dragon-ball.png',
+    type: 'Web Site',
+    imgUrl: '/images/memory-game-dbz.png',
+    description: `O Memory Game DBZ é uma aplicação Web desenvolvida em ReactJS, que consiste em um jogo da memória com os personagens do anime Dragon Ball Z. A aplicação possui uma tela inicial de Login e uma tela de jogo, onde o usuário deve encontrar os pares de cartas iguais com o menor tempo possível.`,
+    techs: ['React JS', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    link: 'https://memory-game-dbz.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/memory-game-dbz'
   }
 ];
 
