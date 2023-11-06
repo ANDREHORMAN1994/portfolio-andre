@@ -9,7 +9,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus proje
 
  - **Contando um pouquinho sobre mim:**
 
- > Olá! Meu nome é [André](https://www.linkedin.com/in/andrehorman/), tenho 28 anos e sou formado em Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus estudos em meados de 2020 e desde então me apaixonei pela área de tecnologia. 💚 Após uma grande transição de carreira, tive o prazer de atuar como instrutor de tecnologia Front End durante dois anos, auxiliando e educando estudantes no campo do desenvolvimento web. 👨‍💻
+ > Olá! Meu nome é [André](https://www.linkedin.com/in/andrehorman/), tenho 29 anos e sou formado em Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus estudos em meados de 2020 e desde então me apaixonei pela área de tecnologia. 💚 Após uma grande transição de carreira, tive o prazer de atuar como instrutor de tecnologia Front End durante dois anos, auxiliando e educando estudantes no campo do desenvolvimento web. 👨‍💻
 
  - **Meu objetivo:**
 
@@ -47,7 +47,7 @@ Essas foram as principais tecnologias e bibliotecas utilizadas neste projeto. Ca
 
 Se você estiver interessado em colaborar em projetos interessantes ou tiver alguma pergunta, sinta-se à vontade para entrar em contato comigo pelos seguintes meios:
 
- - **E-mail**: `andre.horman1994@hotmail.com` 
+ - **E-mail**: `andre.horman1994@hotmail.com`
  - **LinkedIn**: `https://www.linkedin.com/in/andrehorman/`
  - **GitHub**: `https://github.com/ANDREHORMAN1994`
 

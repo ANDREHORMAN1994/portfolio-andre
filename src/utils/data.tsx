@@ -108,6 +108,17 @@ const myProjetcs = [
     techs: ['React JS', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     link: 'https://memory-game-dbz.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/memory-game-dbz'
+  },
+  {
+    id: 7,
+    title: 'BLOG ANGULAR',
+    icon: '/images/news-icon.png',
+    type: 'Web Site',
+    imgUrl: '/images/the-blog.png',
+    description: `O Blog Angular é uma aplicação Web desenvolvida em Angular, que consome a News API para exibir as principais notícias do momento. O projeto foi desenvolvido com o intuito de praticar os conceitos básicos do Angular, como componentes, diretivas, serviços, rotas, entre outros.`,
+    techs: ['Angular', 'TypeScript', 'Vercel'],
+    link: 'https://blog-angular-andre-horman.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/blog-angular'
   }
 ];
 
