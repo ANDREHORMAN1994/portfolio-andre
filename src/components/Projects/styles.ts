@@ -93,7 +93,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     > div.text {
       position: absolute;
       top: 3rem;
-      right: -10rem;
+      right: -21.5rem;
       transition: 0.5s;
       width: fit-content;
 
@@ -102,10 +102,11 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
         font-size: 2.5rem;
         /* text-shadow: -4px 5px 22px #11172b; */
 
+        width: 31rem;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 0.8rem;
 
         > img {
@@ -132,12 +133,17 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
     > section > div.text {
       text-align: center;
       right: 0;
-      left: -10rem;
+      left: -9.2rem;
+
+      h2 {
+        width: 18.5rem;
+        text-align: right;
+      }
     }
 
     &:hover {
       > section > div.text {
-        left: -12rem;
+        left: -19.8rem;
       }
     }
   }
@@ -145,7 +151,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   &:hover {
     > section {
       div.text {
-        right: -12rem;
+        right: -32rem;
       }
 
       div.overlay {
