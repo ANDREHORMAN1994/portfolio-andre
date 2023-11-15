@@ -119,6 +119,24 @@ const myProjetcs = [
     techs: ['Angular', 'TypeScript', 'Vercel'],
     link: 'https://blog-angular-andre-horman.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/blog-angular'
+  },
+  {
+    id: 8,
+    title: 'GENIUS GAME',
+    icon: '/images/lamp.png',
+    type: 'Web Site',
+    imgUrl: '/images/genius-game.png',
+    description: `O Genius Game também conhecido como Simon Game é um jogo de memória que desafia os jogadores a repetirem sequências de cores e sons. Este jogo foi desenvolvido utilizando tecnologias de ponta como React JS, Typescript e Tailwind CSS.`,
+    techs: [
+      'React JS',
+      'React Router DOM',
+      'TypeScript',
+      'Tailwind CSS',
+      'SweetAlert2',
+      'Vercel'
+    ],
+    link: 'https://genius-game-react.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/genius-game'
   }
 ];
 
