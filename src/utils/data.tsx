@@ -137,6 +137,17 @@ const myProjetcs = [
     ],
     link: 'https://genius-game-react.vercel.app/',
     repo: 'https://github.com/ANDREHORMAN1994/genius-game'
+  },
+  {
+    id: 9,
+    title: 'JOGO DA VELHA',
+    icon: '/images/tic-tac.svg',
+    type: 'Web Site',
+    imgUrl: '/images/tic-tac-toe.png',
+    description: `O Jogo da Velha é um jogo de tabuleiro de dois jogadores, X e O, que alternam entre si marcando os espaços em um tabuleiro 3x3. O jogador que conseguir colocar três de suas marcas em uma linha horizontal, vertical ou diagonal, vence o jogo. O projeto foi desenvolvido utilizando HTML, CSS e JavaScript Vanilla.`,
+    techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+    link: 'https://tic-tac-toe-vanilla.vercel.app/',
+    repo: 'https://github.com/ANDREHORMAN1994/tic-tac-toe'
   }
 ];
 
