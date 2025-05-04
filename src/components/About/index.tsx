@@ -24,23 +24,23 @@ export function About(): ReactElement {
         />
         <TextContainer>
           <p>
-            Olá! Meu nome é André, tenho 29 anos e sou formado em
-            Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus
-            estudos em meados de 2020 e desde então me apaixonei pela área. Tive
-            o prazer de atuar como instrutor de tecnologia Front End durante
-            dois anos, auxiliando e educando estudantes no campo do
-            desenvolvimento web. 💚
+            Olá! Meu nome é André, tenho 30 anos e sou desenvolvedor Web.
+            Conheci a programação em meados de 2020 e desde então me apaixonei
+            pela área de tecnologia. 💚 Após uma grande transição de carreira,
+            hoje tenho o prazer de atuar como desenvolvedor Front End, unindo
+            criatividade e código para criar experiências digitais de qualidade.
           </p>
           <p>
-            Atualmente, estou focado em aprimorar minhas habilidades como
-            desenvolvedor Full Stack, com o objetivo de obter novas experiências
-            que possam contribuir para meu futuro. 🚀
+            Atualmente, estou focado em aprimorar minhas habilidades, com o
+            objetivo de obter novas experiências que possam contribuir para meu
+            futuro. 🚀
           </p>
           <p>
             Minhas principais stacks são:{' '}
             <span>
-              HTML, CSS, JavaScript, Jest, React, Next, Redux, Context Api,
-              Node, Express, MongoDB, MySQL e uma pitada de Python
+              HTML, CSS, JavaScript, Typescript, React, Next, Tailwind CSS,
+              Context API, Redux, Node, Express, MongoDB, MySQL e uma pitada de
+              Python
             </span>
             .
           </p>
