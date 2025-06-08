@@ -5,15 +5,17 @@ interface ItemProps {
   year: string;
   status: string;
   description: string;
+  width?: string;
 }
 
 function ExperienceItem({
   year,
   status,
-  description
+  description,
+  width = '100%'
 }: ItemProps): ReactElement {
   return (
-    <ItemContainer data-aos="fade-up">
+    <ItemContainer data-aos="fade-up" width={width}>
       <div>
         <h1>{year}</h1>
         <h2>{status}</h2>
@@ -22,5 +24,9 @@ function ExperienceItem({
     </ItemContainer>
   );
 }
+
+ExperienceItem.defaultProps = {
+  width: '100%'
+};
 
 export default ExperienceItem;

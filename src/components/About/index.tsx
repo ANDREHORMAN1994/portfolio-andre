@@ -27,7 +27,7 @@ export function About(): ReactElement {
             Olá! Meu nome é André, tenho 30 anos e sou desenvolvedor Web.
             Conheci a programação em meados de 2020 e desde então me apaixonei
             pela área de tecnologia. 💚 Após uma grande transição de carreira,
-            hoje tenho o prazer de atuar como desenvolvedor Front End, unindo
+            hoje tenho o prazer de atuar como desenvolvedor Front-End, unindo
             criatividade e código para criar experiências digitais de qualidade.
           </p>
           <p>
@@ -40,7 +40,7 @@ export function About(): ReactElement {
             <span>
               HTML, CSS, JavaScript, Typescript, React, Next, Tailwind CSS,
               Context API, Redux, Node, Express, MongoDB, MySQL e uma pitada de
-              Python
+              AWS
             </span>
             .
           </p>

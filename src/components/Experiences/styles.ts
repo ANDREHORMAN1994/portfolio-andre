@@ -5,13 +5,14 @@ export const Container = styled.div`
 
   > section {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
     margin-top: 7rem;
     gap: 5rem;
     padding-bottom: 8rem;
     border-bottom: 3px solid ${({ theme }) => theme.primary};
+    overflow-x: auto;
 
     @media (max-width: 1000px) {
       gap: 1rem;
@@ -25,19 +26,24 @@ export const Container = styled.div`
   }
 `;
 
-export const ItemContainer = styled.div`
+interface ItemContainerProps {
+  width: string;
+}
+
+export const ItemContainer = styled.div<ItemContainerProps>`
+  width: ${({ width }) => `calc(${width} - 2.5rem)`};
+  min-width: ${({ width }) => `calc(${width} - 2.5rem)`};
+
   > div {
     background: ${({ theme }) => theme.gradient};
     padding: 1rem;
     padding-top: 2.5rem;
     height: 20rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-
-    /* max-width: 19rem; */
-
     transition: 0.5s;
 
     h1 {
@@ -90,6 +96,9 @@ export const ItemContainer = styled.div`
   }
 
   @media (max-width: 700px) {
+    width: 100%;
+    min-width: 100%;
+
     > div {
       height: auto;
       padding: 2rem;
