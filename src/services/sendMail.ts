@@ -1,9 +1,12 @@
 import axios, { AxiosResponse } from 'axios';
+import { type Language, translations } from '@/i18n/translations';
 
 interface SendContactEmailParams {
   name: string;
   senderMail: string;
   message: string;
+  website: string;
+  language: Language;
 }
 
 interface ContactResponse {
@@ -11,19 +14,19 @@ interface ContactResponse {
   status: number;
 }
 
-class ErrorForm extends Error {
-  response: ContactResponse | undefined;
-}
-
 const sendContactEmail = async ({
   name,
   senderMail,
-  message
+  message,
+  website,
+  language
 }: SendContactEmailParams): Promise<AxiosResponse | ContactResponse> => {
   const infoBody = {
     name,
     senderMail,
-    message
+    message,
+    website,
+    language
   };
 
   try {
@@ -31,13 +34,15 @@ const sendContactEmail = async ({
     // console.log(response, 'TRY');
     return response;
   } catch (error: unknown) {
-    if (error instanceof ErrorForm && error.response) {
+    if (axios.isAxiosError<string>(error) && error.response) {
       const { response } = error;
-      // console.log(response, 'CATCH');
-      return response;
+      return {
+        data: response.data,
+        status: response.status
+      };
     }
     return {
-      data: '🚨 Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente! 😓',
+      data: translations[language].contact.fallbackError,
       status: 403
     };
   }

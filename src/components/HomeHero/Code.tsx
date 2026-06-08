@@ -5,6 +5,7 @@ interface Props {
   text: string;
   infos: Array<[string, string | number]>;
   showComments?: boolean;
+  comment?: string;
   size: string;
 }
 
@@ -12,11 +13,12 @@ function Code({
   text,
   infos = [],
   showComments = false,
-  size
+  size,
+  comment = ''
 }: Props): ReactElement {
   return (
-    <CodeItem size={size}>
-      {showComments && <span className="comments">// Minha apresentação</span>}
+    <CodeItem $size={size}>
+      {showComments && <span className="comments">{comment}</span>}
       <span className="purple">{text} </span>
       {'{'}
       {infos.map(([key, value]) => (
@@ -30,6 +32,7 @@ function Code({
 }
 
 Code.defaultProps = {
+  comment: '',
   showComments: false
 };
 

@@ -1,46 +1,30 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { usePicture } from '../../hooks/usePicture';
 import Title from '../Title';
 import { Container, TextContainer } from './styles';
 
 export function About(): ReactElement {
-  const [showImg, setShowImg] = useState(false);
   const picture = usePicture();
-
-  useEffect(() => {
-    if (picture.length) {
-      setShowImg(true);
-    }
-  }, [picture]);
+  const { text } = useLanguage();
 
   return (
     <Container>
-      <Title title="Sobre mim" description="Resumo" />
+      <Title title={text.about.title} description={text.about.subtitle} />
       <section data-aos="fade-up">
-        <img
-          className={showImg ? 'picture' : ''}
-          src={picture}
-          alt="Minha imagem do github"
-        />
+        {picture && (
+          <img className="picture" src={picture} alt={text.about.pictureAlt} />
+        )}
         <TextContainer>
+          <p>{text.about.introduction}</p>
+          <p>{text.about.collaboration}</p>
           <p>
-            Olá! Meu nome é André, tenho 30 anos e sou desenvolvedor Web.
-            Conheci a programação em meados de 2020 e desde então me apaixonei
-            pela área de tecnologia. 💚 Após uma grande transição de carreira,
-            hoje tenho o prazer de atuar como desenvolvedor Front-End, unindo
-            criatividade e código para criar experiências digitais de qualidade.
-          </p>
-          <p>
-            Atualmente, estou focado em aprimorar minhas habilidades, com o
-            objetivo de obter novas experiências que possam contribuir para meu
-            futuro. 🚀
-          </p>
-          <p>
-            Minhas principais stacks são:{' '}
+            {text.about.stackPrefix}{' '}
             <span>
-              HTML, CSS, JavaScript, Typescript, React, Next, Tailwind CSS,
-              Context API, Redux, Node, Express, MongoDB, MySQL e uma pitada de
-              AWS
+              HTML, CSS, JavaScript, TypeScript, React, Next.js, Tailwind CSS,
+              Jest, Cypress, Playwright, Redux Toolkit, Node.js, Express,
+              NestJS, APIs REST, MongoDB, MySQL, PostgreSQL, Git, Docker e uma
+              pitada de AWS
             </span>
             .
           </p>

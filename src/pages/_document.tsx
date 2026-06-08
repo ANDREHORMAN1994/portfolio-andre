@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
 
     try {
       ctx.renderPage = async () =>
-        await originalRenderPage({
+        originalRenderPage({
           enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         });
 
@@ -40,7 +40,7 @@ export default class MyDocument extends Document {
 
   render(): ReactElement {
     return (
-      <Html lang="pt-br">
+      <Html lang="pt-BR">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

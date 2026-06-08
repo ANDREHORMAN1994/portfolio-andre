@@ -2,25 +2,28 @@ import { ReactElement, useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AiOutlineMail } from 'react-icons/ai';
 import { BsWhatsapp } from 'react-icons/bs';
-import { FormContainer, Input, TextArea } from './styles';
+import { FormContainer, HiddenField, Input, TextArea } from './styles';
 import { themeDark, themeLight } from '@/styles/theme';
 import sendContactEmail from '@/services/sendMail';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FormsProps {
   status: boolean;
 }
 
 function Form({ status }: FormsProps): ReactElement {
+  const { language, text } = useLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [website, setWebsite] = useState('');
   const [contactMethod, setContactMethod] = useState('email');
   const [isDisabled, setIsDisabled] = useState(true);
 
   const handleValidation = (): void => {
-    const valName = name.length > 0;
-    const valEmail = email.length > 0;
-    const valMessage = message.length > 0;
+    const valName = name.trim().length > 0;
+    const valEmail = email.trim().length > 0;
+    const valMessage = message.trim().length > 0;
 
     setIsDisabled(
       contactMethod === 'email'
@@ -42,7 +45,9 @@ function Form({ status }: FormsProps): ReactElement {
           await sendContactEmail({
             name,
             senderMail: email,
-            message
+            message,
+            website,
+            language
           });
 
         toast(data, {
@@ -65,11 +70,15 @@ function Form({ status }: FormsProps): ReactElement {
         // console.log(error);
       }
     } else {
-      const whatsappMessage = `Olá, meu nome é ${name} e tenho uma mensagem para você: ${message}`;
+      const whatsappMessage = text.contact.whatsappMessage(name, message);
 
       // Exemplo: abrir uma nova janela com o link do WhatsApp
       const encodedMessage = encodeURIComponent(whatsappMessage);
-      window.open(`https://wa.me/5583993638760?text=${encodedMessage}`);
+      window.open(
+        `https://wa.me/5583993638760?text=${encodedMessage}`,
+        '_blank',
+        'noopener,noreferrer'
+      );
       setIsDisabled(false);
     }
   };
@@ -84,7 +93,7 @@ function Form({ status }: FormsProps): ReactElement {
       }}
     >
       <div className="contact-container">
-        <p>Escolha uma forma de contato :</p>
+        <p>{text.contact.chooseMethod}</p>
         <div>
           <label htmlFor="email">
             <input
@@ -116,43 +125,64 @@ function Form({ status }: FormsProps): ReactElement {
         </div>
       </div>
       <Input
+        aria-label={text.contact.name}
         type="text"
-        placeholder="Nome"
-        status={status}
+        placeholder={text.contact.name}
         onChange={({ target }) => {
           setName(target.value);
         }}
         value={name}
-        contact={contactMethod}
+        $contact={contactMethod}
         autoComplete="off"
         spellCheck={false}
+        maxLength={100}
         required
       />
       {contactMethod === 'email' && (
         <Input
+          aria-label="E-mail"
           type="email"
           placeholder="E-mail"
-          status={status}
           onChange={({ target }) => {
             setEmail(target.value);
           }}
           value={email}
-          contact={contactMethod}
+          $contact={contactMethod}
           autoComplete="off"
           spellCheck={false}
+          maxLength={254}
           required
         />
       )}
       <TextArea
-        placeholder="Mensagem"
+        aria-label={text.contact.message}
+        placeholder={text.contact.message}
         onChange={({ target }) => {
           setMessage(target.value);
         }}
         autoComplete="off"
+        maxLength={3000}
         value={message}
+        required
       />
+      <HiddenField aria-hidden="true">
+        <label htmlFor="website">
+          {text.contact.hiddenField}
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={({ target }) => {
+              setWebsite(target.value);
+            }}
+          />
+        </label>
+      </HiddenField>
       <button type="submit" disabled={isDisabled}>
-        ENVIAR MENSAGEM
+        {text.contact.send}
         {contactMethod === 'email' ? <AiOutlineMail /> : <BsWhatsapp />}
       </button>
     </FormContainer>

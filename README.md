@@ -1,59 +1,26 @@
 # Portfólio de André Horman
 
-Bem-vindo ao meu portfólio! Aqui você encontrará uma seleção dos meus projetos, habilidades e experiências. Sou um desenvolvedor Web Full Stack, apaixonado pela área e comprometido em entregar resultados excepcionais.
+Este repositório reúne meu portfólio pessoal, experiências e uma seleção de projetos desenvolvidos ao longo da minha trajetória.
 
-#### Acesse meu Portfólio _[AQUI](https://portfolio-andre-horman.vercel.app/)_
+**Acesse o portfólio:** [portfolio-andre-horman.vercel.app](https://portfolio-andre-horman.vercel.app/)
 
-## 👨‍💻 Sobre Mim
+## Sobre mim
 
-- **Contando um pouquinho sobre mim:**
+Olá! Meu nome é André Horman. Sou Desenvolvedor Full Stack e atuo na construção de aplicações web desde 2020, com foco em soluções escaláveis, performáticas e que entregam uma boa experiência para o usuário.
 
- > Olá! Meu nome é [André](https://www.linkedin.com/in/andrehorman/), tenho 29 anos e sou formado em Desenvolvimento Web Full Stack pela escola Trybe. Iniciei meus estudos em meados de 2020 e desde então me apaixonei pela área de tecnologia. 💚 Após uma grande transição de carreira, tive o prazer de atuar como instrutor de tecnologia Front-End durante dois anos, auxiliando e educando estudantes no campo do desenvolvimento web. 👨‍💻
+Tenho forte atuação no frontend com React, Next.js, TypeScript e Tailwind CSS, além de experiência no backend com Node.js, Express, APIs REST e bancos de dados como MySQL, MongoDB e PostgreSQL.
 
-- **Meu objetivo:**
+Ao longo da minha trajetória, trabalhei em projetos com dados em tempo real, integrações com APIs, Web3, dashboards, componentes reutilizáveis e otimização de performance. Também atuei como instrutor de frontend, realizando mentorias, code reviews e apoiando a formação de novos desenvolvedores.
 
- > Atualmente, estou focado em aprimorar minhas habilidades como desenvolvedor Full Stack, com o objetivo de obter novas experiências que possam contribuir para meu futuro. 🚀
+Atualmente, busco contribuir em projetos desafiadores, especialmente nas áreas de frontend, full stack, performance, produtos digitais e integrações modernas com IA.
 
-`OBS:` _Segue também meu [currículo](https://resume.io/r/5XOjVWyDz) para maior visibilidade 😉_
+## Sobre o portfólio
 
-Este repositório é destinado ao meu portfólio pessoal e aos projetos que desenvolvi ao longo dos meus estudos.
+O projeto foi construído com Next.js, TypeScript e Styled Components. Ele inclui páginas de detalhes dos projetos, alternância de tema, formulário de contato integrado ao SendGrid e layout responsivo.
 
-## 💻 Tecnologias e Bibliotecas Utilizadas
+## Contato
 
-- **Next.js:**
-
- > Escolhi utilizar o framework Next.js para o desenvolvimento deste projeto. O Next.js é uma ferramenta poderosa para construção de aplicações web modernas, fornecendo recursos avançados de renderização, roteamento e pré-renderização, o que resulta em uma experiência de usuário rápida e otimizada.
-
-- **TypeScript:**
-
- > Optei por utilizar TypeScript em conjunto com o Next.js, aproveitando os benefícios da tipagem, permitindo identificar erros antes mesmo de executar a aplicação, além de proporcionar um desenvolvimento mais produtivo e uma melhor escalabilidade do projeto.
-
-- **Styled Components:**
-
- > Para a estilização dos componentes, utilizei a biblioteca Styled Components. Essa biblioteca permite escrever estilos CSS diretamente nos componentes em JavaScript ou TypeScript, com alto poder de reusabilidade.
-
-- **Axios:**
-
- > Para lidar com as chamadas de API, integrei a biblioteca Axios ao projeto. O Axios é uma biblioteca popular e amplamente utilizada para fazer requisições HTTP, tornando mais fácil o processo de comunicação.
-
-- **Nodemailer e Sendgrid:**
-
- > Implementei a funcionalidade de envio de e-mails utilizando o Nodemailer em conjunto com o serviço Sendgrid. O Nodemailer simplificou a configuração e envio de e-mails, enquanto o Sendgrid garantiu a entrega confiável e segura das mensagens enviadas a partir da aplicação.
-
-- **Deploy na Vercel:**
-
- > Realizei o deploy deste projeto na plataforma Vercel. A Vercel é uma plataforma de hospedagem e deploy que simplifica o processo de publicação de aplicações web.
-
-Essas foram as principais tecnologias e bibliotecas utilizadas neste projeto. Cada uma delas desempenhou um papel importante no desenvolvimento e contribuiu para a construção de um aplicativo melhor.
-
-## 📞 Contato
-
-Se você estiver interessado em colaborar em projetos interessantes ou tiver alguma pergunta, sinta-se à vontade para entrar em contato comigo pelos seguintes meios:
-
-- **E-mail**: `andre.horman1994@hotmail.com`
-- **LinkedIn**: `https://www.linkedin.com/in/andrehorman/`
-- **GitHub**: `https://github.com/ANDREHORMAN1994`
-
-Estou ansioso para trabalhar em desafios empolgantes e fazer parte de projetos inovadores.
-
-**Obrigado por visitar o meu portfólio**
+- **Currículo:** [resume.io/r/5XOjVWyDz](https://resume.io/r/5XOjVWyDz)
+- **E-mail:** `andre.horman1994@hotmail.com`
+- **LinkedIn:** [linkedin.com/in/andrehorman](https://www.linkedin.com/in/andrehorman/)
+- **GitHub:** [github.com/ANDREHORMAN1994](https://github.com/ANDREHORMAN1994)

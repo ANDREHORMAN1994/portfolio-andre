@@ -7,30 +7,22 @@ import Link from 'next/link';
 import {
   ReactElement,
   useEffect,
-  useState,
   type Dispatch,
   type SetStateAction
 } from 'react';
-// import sdk from '@stackblitz/sdk';
 import { ProjectDetailsContainer } from '@/styles/ProjectDetailsStyle';
 import { Banner } from '../../../components/Banner';
 import Header from '../../../components/Header';
-import Loading from '../../../components/Loading';
-import myProjetcs from '../../../utils/data';
-
-interface ProjectInfoProps {
-  title: string;
-  type: string;
-  imgUrl: string;
-  description: string;
-  link: string;
-  techs: string[];
-  repo: string;
-  icon?: string | null;
-}
+import { Tooltip } from '../../../components/Tooltip';
+import myProjetcs, {
+  getLocalizedProject,
+  type Project
+} from '../../../utils/data';
+import { SITE_URL } from '../../../utils/site';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ServerSideProps {
-  id: string;
+  projectInfo: Project;
 }
 
 interface DetailsProps extends ServerSideProps {
@@ -38,45 +30,21 @@ interface DetailsProps extends ServerSideProps {
   setStatus: Dispatch<SetStateAction<boolean>>;
 }
 
-function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
-  const [loading, setLoading] = useState(true);
-  const [projectInfo, setProjectInfo] = useState<ProjectInfoProps | null>(null);
-
-  // const openProject = (): void => {
-  //   const url = 'stackblitz-starters-duehlx';
-
-  //   sdk.embedProjectId('embed', url, {
-  //     forceEmbedLayout: true,
-  //     openFile: 'src/app.js',
-  //     view: 'editor',
-  //     hideExplorer: true
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   if (!loading) {
-  //     openProject();
-  //   }
-  // }, [loading]);
+function ProjectDetails({
+  status,
+  setStatus,
+  projectInfo
+}: DetailsProps): ReactElement {
+  const { language, text } = useLanguage();
 
   useEffect(() => {
-    Aos.init({ duration: 1500 });
-    const newInfos = myProjetcs.find(
-      project => Number(project.id) === Number(id)
-    );
-
-    setTimeout(() => {
-      if (newInfos != null) {
-        setProjectInfo(newInfos);
-        setLoading(false);
-      }
-    }, 2000);
+    Aos.init({ duration: 1000, once: true });
   }, []);
 
-  if (loading || projectInfo == null) return <Loading />;
-
-  const { title, type, imgUrl, description, link, techs, repo, icon } =
-    projectInfo;
+  const { id, title, type, imgUrl, description, link, techs, repo, icon } =
+    getLocalizedProject(projectInfo, language);
+  const socialImage = `${SITE_URL}${imgUrl}`;
+  const projectUrl = `${SITE_URL}/projects/${id.toString()}`;
 
   const verifyIndex = (index: number): string => {
     const lastIndexList = techs.length - 1;
@@ -89,42 +57,48 @@ function ProjectDetails({ status, setStatus, id }: DetailsProps): ReactElement {
   return (
     <ProjectDetailsContainer>
       <Head>
-        <title>{title} | Meu portfólio</title>
+        <title>{`${title} | André Horman`}</title>
         <meta name="description" content={description} />
-        <meta property="og:image" content={imgUrl} />
-        <meta property="og:image:secure_url" content={imgUrl} />
-        <meta name="twitter:image" content={imgUrl} />
-        <meta name="twitter:image:src" content={imgUrl} />
+        <link rel="canonical" href={projectUrl} />
+        <meta property="og:title" content={`${title} | André Horman`} />
         <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={projectUrl} />
+        <meta property="og:image" content={socialImage} />
+        <meta property="og:image:secure_url" content={socialImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${title} | André Horman`} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={socialImage} />
       </Head>
       <Header status={status} setStatus={setStatus} />
       <Banner title={title} icon={icon} type={type} imgUrl={imgUrl} />
 
       <main data-aos="fade-up">
         <p>{description}</p>
-        <h2 data-aos="fade-up">Tecnologias Utilizadas 👨‍💻</h2>
+        <h2 data-aos="fade-up">{text.projects.technologies}</h2>
         <ul data-aos="fade-up">
           {techs.map((tech, index) => (
-            <li className={verifyIndex(index)}>{tech}</li>
+            <li key={tech} className={verifyIndex(index)}>
+              {tech}
+            </li>
           ))}
         </ul>
         <div>
-          <button type="button">
-            <Link href={link} target="_blank">
-              Ver Projeto 👀
-            </Link>
-          </button>
-          <button type="button">
-            <Link href={repo} target="_blank">
+          <Link href={link} target="_blank" rel="noreferrer">
+            {text.projects.viewProject}
+          </Link>
+          <Tooltip label={text.projects.sourceCode(title)}>
+            <Link
+              href={repo}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={text.projects.sourceCode(title)}
+            >
               <AiFillGithub />
             </Link>
-          </button>
+          </Tooltip>
         </div>
-        {/* {!loading && (
-          <div id="embed">
-            <p>Embed will go here</p>
-          </div>
-        )} */}
       </main>
     </ProjectDetailsContainer>
   );
@@ -139,10 +113,18 @@ export const getServerSideProps: GetServerSideProps<ServerSideProps> = async ({
     };
   }
 
-  const { id } = params;
+  const projectId = Number(params.id);
+  const projectInfo = myProjetcs.find(project => project.id === projectId);
+
+  if (!Number.isInteger(projectId) || projectInfo == null) {
+    return {
+      notFound: true
+    };
+  }
+
   return {
     props: {
-      id
+      projectInfo
     }
   };
 };

@@ -82,32 +82,23 @@ export const ProjectDetailsContainer = styled.div`
       display: flex;
       gap: 1rem;
 
-      > button {
-        background: none;
-        border: none;
+      a {
+        align-items: center;
+        background: ${({ theme }) => theme.primary};
         border-radius: 0.5rem;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: 300;
         margin-top: 2rem;
+        min-width: max-content;
+        padding: 0.8rem 2rem;
+        text-transform: uppercase;
+        transition: 0.5s;
 
         &:hover {
           background: ${({ theme }) => darken(0.1, theme.primary)};
-        }
-
-        a {
-          background: ${({ theme }) => theme.primary};
-          padding: 0.8rem 2rem;
-          border-radius: 0.5rem;
-          border: none;
-          min-width: max-content;
-          color: #fff;
-          text-transform: uppercase;
-          font-size: 1.5rem;
-          font-weight: 300;
-          transition: 0.5s;
-          cursor: pointer;
-
-          &:hover {
-            background: ${({ theme }) => darken(0.1, theme.primary)};
-          }
         }
       }
     }
@@ -128,26 +119,19 @@ export const ProjectDetailsContainer = styled.div`
         gap: 0;
         width: 100%;
 
-        button {
-          width: 100%;
+        a {
+          justify-content: center;
           margin: 0.5rem 0;
+          padding: 0.7rem 2rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          width: 100%;
 
-          a {
-            padding: 0.7rem 2rem;
-            min-width: max-content;
-            font-size: 1.2rem;
-            font-weight: 500;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-
-            > svg {
-              width: 1.6rem;
-              height: 1.6rem;
-              margin: 0;
-              padding: 0;
-            }
+          > svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin: 0;
+            padding: 0;
           }
         }
       }

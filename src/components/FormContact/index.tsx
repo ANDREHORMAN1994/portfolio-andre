@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Title from '../Title';
 import Form from './Form';
 import { Container } from './styles';
@@ -8,17 +9,19 @@ interface FormsProps {
 }
 
 export function FormContact({ status }: FormsProps): ReactElement {
+  const { text } = useLanguage();
+
   return (
     <Container>
       <Title
         title={
           <>
-            Vamos trabalhar
+            {text.contact.titleFirstLine}
             <br />
-            juntos ?
+            {text.contact.titleSecondLine}
           </>
         }
-        description="Entre em contato comigo 🤝"
+        description={text.contact.subtitle}
       />
 
       <Form status={status} />

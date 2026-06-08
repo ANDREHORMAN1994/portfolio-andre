@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  scroll-margin-top: 1rem;
   width: 100%;
 
   > section {
@@ -27,12 +28,12 @@ export const Container = styled.div`
 `;
 
 interface ItemContainerProps {
-  width: string;
+  $width: string;
 }
 
 export const ItemContainer = styled.div<ItemContainerProps>`
-  width: ${({ width }) => `calc(${width} - 2.5rem)`};
-  min-width: ${({ width }) => `calc(${width} - 2.5rem)`};
+  width: ${({ $width }) => `calc(${$width} - 2.5rem)`};
+  min-width: ${({ $width }) => `calc(${$width} - 2.5rem)`};
 
   > div {
     background: ${({ theme }) => theme.gradient};
@@ -49,14 +50,29 @@ export const ItemContainer = styled.div<ItemContainerProps>`
     h1 {
       color: ${({ theme }) => theme.primary};
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     h2 {
       color: ${({ theme }) => theme.secondary};
       font-size: 1.5rem;
       font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: ${({ theme }) => theme.textPure};
+      font-size: 1rem;
+      font-weight: 500;
       margin-bottom: 1rem;
+
+      svg {
+        color: ${({ theme }) => theme.primary};
+        flex-shrink: 0;
+      }
     }
 
     p {
@@ -77,16 +93,21 @@ export const ItemContainer = styled.div<ItemContainerProps>`
 
   @media (max-width: 1000px) {
     > div {
-      height: 15rem;
+      height: 18rem;
       padding-top: 1.5rem;
 
       h1 {
         font-size: 1.2rem;
-        margin: 1rem;
+        margin-bottom: 0.75rem;
       }
 
       h2 {
         font-size: 1rem;
+      }
+
+      h3 {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
       }
 
       p {
@@ -109,6 +130,10 @@ export const ItemContainer = styled.div<ItemContainerProps>`
 
       h2 {
         font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1rem;
       }
 
       p {

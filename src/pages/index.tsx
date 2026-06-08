@@ -4,7 +4,6 @@ import Head from 'next/head';
 import {
   ReactElement,
   useEffect,
-  useState,
   type Dispatch,
   type SetStateAction
 } from 'react';
@@ -15,9 +14,10 @@ import { FormContact } from '../components/FormContact';
 import Header from '../components/Header';
 import HomeHero from '../components/HomeHero';
 import { Knowledges } from '../components/Knowledges';
-import Loading from '../components/Loading';
 import { Projects } from '../components/Projects';
 import { HomeContainer } from '../styles/HomeStyle';
+import { SITE_OG_IMAGE, SITE_URL } from '../utils/site';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HomeProps {
   status: boolean;
@@ -25,40 +25,35 @@ interface HomeProps {
 }
 
 function Home({ status, setStatus }: HomeProps): ReactElement {
-  const [loading, setLoading] = useState(true);
+  const { text } = useLanguage();
 
   useEffect(() => {
-    Aos.init({ duration: 1500 });
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    Aos.init({ duration: 1000, once: true });
   }, []);
-
-  if (loading) return <Loading />;
 
   return (
     <HomeContainer>
       <Head>
-        <title>Home | Meu portfólio</title>
-        <meta
-          name="description"
-          content="Sou um desenvolvedor Web Full Stack e aqui apresento alguns projetos desenvolvidos por mim!"
-        />
-        <meta property="og:image" content="/images/ogimage.jpg" />
-        <meta property="og:image:secure_url" content="/images/ogimage.jpg" />
-        <meta name="twitter:image" content="/images/ogimage.jpg" />
-        <meta name="twitter:image:src" content="/images/ogimage.jpg" />
-        <meta
-          property="og:description"
-          content="Sou um desenvolvedor Web Full Stack e aqui apresento alguns projetos desenvolvidos por mim!"
-        />
+        <title>{text.site.homeTitle}</title>
+        <meta name="description" content={text.site.description} />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:title" content={text.site.homeTitle} />
+        <meta property="og:description" content={text.site.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:image" content={SITE_OG_IMAGE} />
+        <meta property="og:image:secure_url" content={SITE_OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={text.site.homeTitle} />
+        <meta name="twitter:description" content={text.site.description} />
+        <meta name="twitter:image" content={SITE_OG_IMAGE} />
       </Head>
       <Header status={status} setStatus={setStatus} />
       <main className="container">
         <HomeHero />
         <About />
-        <Experiences />
         <Projects />
+        <Experiences />
         <Knowledges />
         <FormContact status={status} />
       </main>

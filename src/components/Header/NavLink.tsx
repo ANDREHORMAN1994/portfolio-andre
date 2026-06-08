@@ -6,27 +6,34 @@ import { NavItemContainer } from './styles';
 interface Props {
   title: string;
   path: string;
+  active?: boolean;
   includes?: boolean;
 }
 
-function NavLink({ title, path, includes = false }: Props): ReactElement {
+function NavLink({
+  title,
+  path,
+  active,
+  includes = false
+}: Props): ReactElement {
   const router = useRouter();
 
   const verifyIsActive = (): boolean => {
     if (includes) return router.pathname.includes(path);
-    return path === router.pathname;
+    return path === router.asPath;
   };
 
-  const isActive = verifyIsActive();
+  const isActive = active ?? verifyIsActive();
 
   return (
-    <NavItemContainer isActive={isActive}>
+    <NavItemContainer $isActive={isActive}>
       <Link href={path}>{title}</Link>
     </NavItemContainer>
   );
 }
 
 NavLink.defaultProps = {
+  active: undefined,
   includes: false
 };
 

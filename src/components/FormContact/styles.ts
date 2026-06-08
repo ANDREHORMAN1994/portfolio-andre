@@ -2,8 +2,7 @@ import { darken, lighten } from 'polished';
 import styled from 'styled-components';
 
 interface InputProps {
-  status: boolean;
-  contact: string;
+  $contact: string;
 }
 
 export const Container = styled.section``;
@@ -133,7 +132,7 @@ export const Input = styled.input<InputProps>`
   font-size: 1.2rem;
   outline: none;
   transition: 0.5s;
-  grid-column: ${({ contact }) => (contact === 'email' ? 0 : '1/3')};
+  grid-column: ${({ $contact }) => ($contact === 'email' ? 0 : '1/3')};
 
   &:focus {
     border-color: ${({ theme }) => theme.primary};
@@ -208,4 +207,10 @@ export const TextArea = styled.textarea`
     padding: 1.4rem;
     font-size: 1rem;
   }
+`;
+
+export const HiddenField = styled.div`
+  left: -9999px;
+  position: absolute;
+  top: auto;
 `;

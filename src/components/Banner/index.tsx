@@ -15,7 +15,7 @@ export function Banner({
   imgUrl
 }: BannerProps): ReactElement {
   return (
-    <Container imgUrl={imgUrl}>
+    <Container $imgUrl={imgUrl}>
       <div className="overlay" />
       <section>
         {icon ? (

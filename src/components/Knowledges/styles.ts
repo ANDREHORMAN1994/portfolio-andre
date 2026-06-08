@@ -63,3 +63,54 @@ export const ContainerItem = styled.div`
     }
   }
 `;
+
+export const CarouselContainer = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+`;
+
+export const CarouselViewport = styled.div`
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const CarouselTrack = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: calc((100% - 4rem) / 5);
+  grid-auto-flow: column;
+  padding: 0.5rem;
+
+  @media (max-width: 1200px) {
+    grid-auto-columns: calc((100% - 3rem) / 4);
+  }
+
+  @media (max-width: 768px) {
+    grid-auto-columns: calc((100% - 2rem) / 3);
+  }
+
+  @media (max-width: 550px) {
+    grid-auto-columns: 100%;
+  }
+`;
+
+export const CarouselButton = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.secondary};
+  font-size: 2rem;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    color: ${({ theme }) => theme.primary};
+  }
+`;

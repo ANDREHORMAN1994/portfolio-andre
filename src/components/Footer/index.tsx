@@ -1,12 +1,12 @@
 import { ReactElement } from 'react';
 import { AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
 import { FaWpforms } from 'react-icons/fa';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Tooltip } from '../Tooltip';
 import { Container } from './styles';
 
 export function Footer(): ReactElement {
-  const handleRedirect = (url: string): void => {
-    window.open(url);
-  };
+  const { text } = useLanguage();
 
   const handleScrollTop = (): void => {
     window.scroll({
@@ -19,24 +19,39 @@ export function Footer(): ReactElement {
     <Container>
       <div className="container">
         <button type="button" onClick={handleScrollTop}>
-          Voltar ao topo
+          {text.footer.backToTop}
         </button>
         <section>
-          <AiOutlineGithub
-            onClick={() => {
-              handleRedirect('https://github.com/ANDREHORMAN1994');
-            }}
-          />
-          <AiFillLinkedin
-            onClick={() => {
-              handleRedirect('https://www.linkedin.com/in/andrehorman/');
-            }}
-          />
-          <FaWpforms
-            onClick={() => {
-              handleRedirect('https://resume.io/r/5XOjVWyDz');
-            }}
-          />
+          <Tooltip align="start" label={text.footer.github}>
+            <a
+              href="https://github.com/ANDREHORMAN1994"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={text.footer.github}
+            >
+              <AiOutlineGithub />
+            </a>
+          </Tooltip>
+          <Tooltip label={text.footer.linkedin}>
+            <a
+              href="https://www.linkedin.com/in/andrehorman/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={text.footer.linkedin}
+            >
+              <AiFillLinkedin />
+            </a>
+          </Tooltip>
+          <Tooltip align="end" label={text.footer.resume}>
+            <a
+              href="https://resume.io/r/5XOjVWyDz"
+              target="_blank"
+              rel="noreferrer"
+              aria-label={text.footer.resume}
+            >
+              <FaWpforms />
+            </a>
+          </Tooltip>
         </section>
       </div>
     </Container>

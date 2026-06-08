@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import { AiOutlineRightCircle } from 'react-icons/ai';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { ProjectContainer } from './styles';
 
 interface Props {
@@ -21,8 +22,10 @@ function ProjectItem({
   imgURL,
   icon
 }: Props): ReactElement {
+  const { text } = useLanguage();
+
   return (
-    <ProjectContainer imgURL={imgURL ?? IMG} data-aos="fade-up">
+    <ProjectContainer $imgURL={imgURL ?? IMG} data-aos="fade-up">
       <section>
         <div className="overlay" />
         <div className="text">
@@ -37,11 +40,9 @@ function ProjectItem({
           <h2>{type}</h2>
         </div>
       </section>
-      <button type="button">
-        <Link href={`/projects/${pathId}`}>
-          Ver mais <AiOutlineRightCircle />
-        </Link>
-      </button>
+      <Link className="project-link" href={`/projects/${pathId}`}>
+        {text.projects.viewMore} <AiOutlineRightCircle />
+      </Link>
     </ProjectContainer>
   );
 }

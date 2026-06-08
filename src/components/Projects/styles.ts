@@ -2,7 +2,7 @@ import { darken } from 'polished';
 import styled from 'styled-components';
 
 interface ProjectContainerProps {
-  imgURL: string;
+  $imgURL: string;
 }
 
 export const Container = styled.div`
@@ -23,29 +23,23 @@ export const Container = styled.div`
     }
   }
 
-  > button {
+  > a.all-projects {
     background: ${({ theme }) => theme.primary};
     padding: 0.8rem 3rem;
     border-radius: 0.5rem;
-    border: none;
-    transform: 0.5s;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: 0.5s;
 
     &:hover {
       background: ${({ theme }) => darken(0.05, theme.primary)};
     }
 
-    a {
-      text-transform: uppercase;
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 300;
-    }
-
     @media (max-width: 500px) {
       padding: 1rem;
-      a {
-        font-size: 1rem;
-      }
+      font-size: 1rem;
     }
   }
 `;
@@ -57,27 +51,22 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   align-items: flex-end;
   position: relative;
 
-  > button {
+  > a.project-link {
+    align-items: center;
+    color: ${({ theme }) => theme.textPure};
+    display: flex;
+    font-size: 2rem;
+    font-weight: 300;
+    gap: 0.8rem;
     height: 4rem;
     margin: 0 0 3rem 5rem;
-    background: none;
-    border: none;
-
-    a {
-      color: ${({ theme }) => theme.textPure};
-      font-size: 2rem;
-      font-weight: 300;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      transition: 0.5s;
-    }
+    transition: 0.5s;
   }
 
   > section {
     width: 50rem;
     height: 100%;
-    background: url(${props => props.imgURL}) no-repeat center;
+    background: url(${props => props.$imgURL}) no-repeat center;
     background-size: cover;
     position: relative;
 
@@ -126,7 +115,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    > button {
+    > a.project-link {
       margin: 3rem 5rem 0 0;
     }
 
@@ -159,7 +148,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       }
     }
 
-    > button a {
+    > a.project-link {
       color: ${({ theme }) => theme.primary};
     }
   }
@@ -180,7 +169,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       }
     }
 
-    > button {
+    > a.project-link {
       position: absolute;
       bottom: 1rem;
       right: 1rem;
@@ -200,7 +189,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
         }
       }
 
-      > button {
+      > a.project-link {
         position: absolute;
         bottom: 1rem;
         right: 1rem;
@@ -220,13 +209,9 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   }
 
   @media (max-width: 450px) {
-    > button {
+    > a.project-link {
       height: auto !important;
-
-      a {
-        height: 1.5rem;
-        gap: 0.8rem;
-      }
+      gap: 0.8rem;
     }
 
     > section > div.text {

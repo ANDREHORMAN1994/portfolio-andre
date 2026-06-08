@@ -1,16 +1,20 @@
 import Link from 'next/link';
 import { ReactElement } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import Title from '../Title';
 import ProjectItem from './ProjectItem';
 import { Container } from './styles';
-import myProjetcs from '../../utils/data';
+import { getLocalizedProjects } from '../../utils/data';
 
 export function Projects(): ReactElement {
+  const { language, text } = useLanguage();
+  const projects = getLocalizedProjects(language);
+
   return (
     <Container>
-      <Title title="Projetos" description="desenvolvidos" />
+      <Title title={text.projects.title} description={text.projects.subtitle} />
       <section>
-        {myProjetcs.slice(0, 3).map(project => (
+        {projects.slice(0, 3).map(project => (
           <ProjectItem
             key={project.id}
             title={project.title}
@@ -21,9 +25,9 @@ export function Projects(): ReactElement {
           />
         ))}
       </section>
-      <button type="button">
-        <Link href="/projects">Ver todos os projetos</Link>
-      </button>
+      <Link className="all-projects" href="/projects">
+        {text.projects.viewAll}
+      </Link>
     </Container>
   );
 }

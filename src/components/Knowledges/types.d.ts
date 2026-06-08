@@ -1,5 +1,4 @@
 import { type ReactElement } from 'react';
-import { Breakpoint, ReactElasticCarouselProps } from 'react-elastic-carousel';
 
 export interface CarouselItem {
   id?: number;
@@ -7,14 +6,6 @@ export interface CarouselItem {
   icon: ReactElement;
 }
 
-export interface Breaks extends Breakpoint {
-  width: number;
-}
-
-export interface CustomCarouselProps extends ReactElasticCarouselProps {
-  breakPoints: Breaks[];
-  isRTL: boolean;
-  showArrows: boolean;
-  pagination: boolean;
+export interface CustomCarouselProps {
   children: ReactElement[];
 }

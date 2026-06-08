@@ -18,7 +18,7 @@ export function ProjectCard({
   icon
 }: ProjectCardProps): ReactElement {
   return (
-    <Container imgUrl={imgUrl}>
+    <Container $imgUrl={imgUrl}>
       <Link href={`/projects/${id.toString()}`}>
         <div className="overlay" />
         <section>

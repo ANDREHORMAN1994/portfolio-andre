@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 interface ContainerProps {
-  imgUrl: string;
+  $imgUrl: string;
 }
 
 export const Container = styled.div<ContainerProps>`
   > a {
     position: relative;
     width: 100%;
-    background: url(${({ imgUrl }) => imgUrl}) no-repeat center;
+    background: url(${({ $imgUrl }) => $imgUrl}) no-repeat center;
     background-size: cover;
     /* background: #ccc; */
     height: 10rem;

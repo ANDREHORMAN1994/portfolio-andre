@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface CodeItemProps {
-  size: string;
+  $size: string;
 }
 
 export const Container = styled.div`
@@ -252,11 +252,98 @@ export const TextContainer = styled.section`
 `;
 
 export const InfoContainer = styled.section`
+  align-items: center;
   color: ${({ theme }) => theme.secondary};
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  gap: 0.6rem;
+  width: 100%;
+
+  &:hover,
+  &:has(button:focus-visible) {
+    section {
+      filter: brightness(1.3);
+      padding: 2.5rem;
+    }
+  }
+`;
+
+export const InfoCarouselViewport = styled.div.attrs({
+  id: 'hero-info-carousel'
+})`
+  max-width: 31.5rem;
+  overflow: hidden;
+  width: 100%;
+
+  @media (max-width: 1450px) {
+    max-width: 20rem;
+  }
+
+  @media (max-width: 1000px) {
+    max-width: none;
+  }
+`;
+
+interface InfoCarouselTrackProps {
+  $showContacts: boolean;
+}
+
+export const InfoCarouselTrack = styled.div<InfoCarouselTrackProps>`
+  display: flex;
+  transform: ${({ $showContacts }) =>
+    $showContacts ? 'translateX(-100%)' : 'translateX(0)'};
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+`;
+
+interface InfoCarouselSlideProps {
+  $active: boolean;
+}
+
+export const InfoCarouselSlide = styled.div<InfoCarouselSlideProps>`
+  flex: 0 0 100%;
+  opacity: ${({ $active }) => ($active ? 1 : 0.2)};
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+`;
+
+interface InfoCarouselControlProps {
+  $showContacts: boolean;
+}
+
+export const InfoCarouselControl = styled.div<InfoCarouselControlProps>`
+  order: ${({ $showContacts }) => ($showContacts ? -1 : 0)};
+`;
+
+export const InfoCarouselButton = styled.button`
+  animation: pulse-arrow 1.2s ease-in-out infinite;
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.primary};
+  display: flex;
+  flex: 0 0 auto;
+
+  > svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: ${({ theme }) => theme.secondary};
+  }
+
+  @keyframes pulse-arrow {
+    0%,
+    100% {
+      opacity: 0.65;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
 `;
 
 export const CodeItem = styled.section<CodeItemProps>`
@@ -265,7 +352,7 @@ export const CodeItem = styled.section<CodeItemProps>`
   font-family: 'JetBrains Mono', monospace;
   font-weight: 300;
   color: #fff;
-  width: ${props => `${props?.size}rem` || '24rem'};
+  width: ${props => `${props.$size}rem`};
   align-self: flex-start;
   transition: 0.5s;
   transform: translateX(100%);
@@ -290,26 +377,12 @@ export const CodeItem = styled.section<CodeItemProps>`
 
   @media (max-width: 1000px) {
     width: 100%;
-
-    &:last-child {
-      margin-right: 0px !important;
-    }
   }
 
   @media (max-width: 700px) {
     animation: none;
     opacity: 1;
     transform: translateX(0%);
-  }
-
-  &:last-child {
-    align-self: flex-end;
-    margin-right: 50px;
-  }
-
-  &:hover {
-    filter: brightness(1.3);
-    padding: 2.5rem;
   }
 
   > div {
