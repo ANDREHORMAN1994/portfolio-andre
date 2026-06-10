@@ -24,11 +24,18 @@ export const Container = styled.header`
   }
 
   @media (max-width: 700px) {
-    flex-direction: column;
-    gap: 0.65rem;
+    min-height: 3.75rem;
+    padding: 0.65rem 0.85rem;
 
     nav {
-      gap: 0.9rem;
+      flex-flow: row nowrap;
+      gap: 0.25rem;
+      justify-content: space-between;
+      width: 100%;
+
+      > span > span[role='tooltip'] {
+        display: none;
+      }
     }
   }
 `;
@@ -60,7 +67,7 @@ export const HeaderIconActions = styled.div`
   }
 
   @media (max-width: 700px) {
-    position: static;
+    display: none;
   }
 `;
 
@@ -81,6 +88,15 @@ export const ThemeButton = styled.button`
     height: 2rem;
     width: 2rem;
   }
+
+  @media (max-width: 700px) {
+    padding: 0.15rem;
+
+    > svg {
+      height: 1.55rem;
+      width: 1.55rem;
+    }
+  }
 `;
 
 export const NavItemContainer = styled.div<NavLinkProps>`
@@ -95,6 +111,24 @@ export const NavItemContainer = styled.div<NavLinkProps>`
         props.$isActive
           ? lighten(0.2, props.theme.primary)
           : lighten(0.2, props.theme.textHighlight)};
+    }
+  }
+
+  @media (max-width: 700px) {
+    a {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.03rem;
+      padding: 0.4rem 0.25rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 360px) {
+    a {
+      font-size: 0.68rem;
+      letter-spacing: 0.02rem;
     }
   }
 `;

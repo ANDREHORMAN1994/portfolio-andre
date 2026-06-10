@@ -1,4 +1,5 @@
 import { darken } from 'polished';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 interface ProjectContainerProps {
@@ -44,14 +45,19 @@ export const Container = styled.div`
   }
 `;
 
-export const ProjectContainer = styled.div<ProjectContainerProps>`
+export const ProjectContainer = styled(Link)<ProjectContainerProps>`
   width: 100%;
   display: flex;
   height: 25rem;
   align-items: flex-end;
   position: relative;
 
-  > a.project-link {
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.primary};
+    outline-offset: 0.35rem;
+  }
+
+  > span.project-link {
     align-items: center;
     color: ${({ theme }) => theme.textPure};
     display: flex;
@@ -115,7 +121,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    > a.project-link {
+    > span.project-link {
       margin: 3rem 5rem 0 0;
     }
 
@@ -148,7 +154,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
       }
     }
 
-    > a.project-link {
+    > span.project-link {
       color: ${({ theme }) => theme.primary};
     }
   }
@@ -165,11 +171,21 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
 
       > div.text {
         left: 1rem;
+        right: auto;
         top: 1rem;
+        width: calc(100% - 2rem);
+
+        h1 {
+          width: 100%;
+        }
+
+        h2 {
+          max-width: 100%;
+        }
       }
     }
 
-    > a.project-link {
+    > span.project-link {
       position: absolute;
       bottom: 1rem;
       right: 1rem;
@@ -185,11 +201,22 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
         > div.text {
           left: 1rem;
           top: 1rem;
+          right: auto;
           text-align: left;
+          width: calc(100% - 2rem);
+
+          h1 {
+            width: 100%;
+          }
+
+          h2 {
+            text-align: left;
+            width: auto;
+          }
         }
       }
 
-      > a.project-link {
+      > span.project-link {
         position: absolute;
         bottom: 1rem;
         right: 1rem;
@@ -209,7 +236,7 @@ export const ProjectContainer = styled.div<ProjectContainerProps>`
   }
 
   @media (max-width: 450px) {
-    > a.project-link {
+    > span.project-link {
       height: auto !important;
       gap: 0.8rem;
     }
