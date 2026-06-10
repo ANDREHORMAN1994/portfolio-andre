@@ -3,27 +3,79 @@ import styled from 'styled-components';
 export const Container = styled.div`
   scroll-margin-top: 1rem;
   width: 100%;
+`;
 
-  > section {
+export const CarouselContainer = styled.section`
+  align-items: center;
+  border-bottom: 3px solid ${({ theme }) => theme.primary};
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+  width: 100%;
+
+  @media (max-width: 700px) {
+    border-bottom: none;
+    display: block;
+    margin-top: 3.5rem;
+  }
+`;
+
+export const CarouselViewport = styled.div`
+  --experience-carousel-padding: 1.5rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2.25rem var(--experience-carousel-padding) 2.75rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    overflow: visible;
+    padding: 0;
+  }
+`;
+
+export const CarouselTrack = styled.div`
+  display: grid;
+  gap: 2rem;
+  grid-auto-columns: calc((100% - 2rem) / 2);
+  grid-auto-flow: column;
+
+  @media (max-width: 1000px) {
+    gap: 1rem;
+    grid-auto-columns: calc((100% - 1rem) / 2);
+  }
+
+  @media (max-width: 700px) {
     display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    margin-top: 7rem;
-    gap: 5rem;
-    padding-bottom: 8rem;
-    border-bottom: 3px solid ${({ theme }) => theme.primary};
-    overflow-x: auto;
+    flex-direction: column;
+    gap: 2rem;
+    padding-inline: 0;
+  }
+`;
 
-    @media (max-width: 1000px) {
-      gap: 1rem;
-    }
+export const CarouselButton = styled.button`
+  background: none;
+  border: none;
+  color: ${({ theme }) => theme.secondary};
+  flex: 0 0 auto;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 
-    @media (max-width: 700px) {
-      flex-direction: column;
-      margin-top: 5rem;
-      gap: 2rem;
-    }
+  &:hover,
+  &:focus-visible {
+    color: ${({ theme }) => theme.primary};
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
@@ -32,8 +84,9 @@ interface ItemContainerProps {
 }
 
 export const ItemContainer = styled.div<ItemContainerProps>`
-  width: ${({ $width }) => `calc(${$width} - 2.5rem)`};
-  min-width: ${({ $width }) => `calc(${$width} - 2.5rem)`};
+  min-width: 0;
+  scroll-snap-align: start;
+  width: 100%;
 
   > div {
     background: ${({ theme }) => theme.gradient};
@@ -45,7 +98,7 @@ export const ItemContainer = styled.div<ItemContainerProps>`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    transition: 0.5s;
+    transition: filter 0.5s ease, transform 0.5s ease;
 
     h1 {
       color: ${({ theme }) => theme.primary};
@@ -75,16 +128,38 @@ export const ItemContainer = styled.div<ItemContainerProps>`
       }
     }
 
-    p {
+    ul {
       color: ${({ theme }) => theme.textLight};
+      display: flex;
+      flex-direction: column;
       font-size: 1rem;
       font-weight: 300;
+      gap: 0.45rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      gap: 0.55rem;
+      line-height: 1.35;
+
+      &::before {
+        background: ${({ theme }) => theme.primary};
+        border-radius: 50%;
+        content: '';
+        flex: 0 0 0.35rem;
+        height: 0.35rem;
+        margin-top: 0.5rem;
+        width: 0.35rem;
+      }
     }
   }
 
   &:hover > div {
     filter: brightness(1.3);
-    transform: translateY(-20px);
+    transform: translateY(-20px) scale(1.02);
   }
 
   /* &:nth-child(even) {
@@ -110,8 +185,18 @@ export const ItemContainer = styled.div<ItemContainerProps>`
         margin-bottom: 0.75rem;
       }
 
-      p {
+      ul {
         font-size: 0.9rem;
+        gap: 0.35rem;
+      }
+
+      li {
+        gap: 0.45rem;
+        line-height: 1.3;
+
+        &::before {
+          margin-top: 0.45rem;
+        }
       }
     }
   }
@@ -136,7 +221,7 @@ export const ItemContainer = styled.div<ItemContainerProps>`
         font-size: 1rem;
       }
 
-      p {
+      ul {
         font-size: 1rem;
       }
     }

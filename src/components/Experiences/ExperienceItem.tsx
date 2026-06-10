@@ -6,7 +6,7 @@ interface ItemProps {
   year: string;
   status: string;
   organization: string;
-  description: string;
+  description: string[];
   width?: string;
 }
 
@@ -15,7 +15,7 @@ function ExperienceItem({
   status,
   organization,
   description,
-  width = '100%'
+  width = '50%'
 }: ItemProps): ReactElement {
   return (
     <ItemContainer data-aos="fade-up" $width={width}>
@@ -26,14 +26,18 @@ function ExperienceItem({
           <MdOutlineBusiness aria-hidden="true" />
           {organization}
         </h3>
-        <p>{description}</p>
+        <ul>
+          {description.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
     </ItemContainer>
   );
 }
 
 ExperienceItem.defaultProps = {
-  width: '100%'
+  width: '50%'
 };
 
 export default ExperienceItem;

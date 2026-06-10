@@ -57,46 +57,63 @@ export const translations = {
     experiences: {
       title: 'Desde 2020',
       subtitle: 'em evolução constante',
+      previous: 'Exibir experiências anteriores',
+      next: 'Exibir próximas experiências',
       items: [
         {
           year: 'Fev 2024 - Fev 2026',
           status: 'Desenvolvedor Front-End',
           organization: 'Opsin Finance',
-          description:
-            'Desenvolvi e mantive o frontend de uma plataforma Web3 de analytics para blockchain e DeFi, criando interfaces escaláveis com React, Next.js, TypeScript e Tailwind CSS. Também integrei APIs REST, carteiras digitais e dados em tempo real para recursos de trading e fluxos multi-chain.',
-          width: '60%'
+          description: [
+            'Frontend de plataforma Web3 para analytics blockchain e DeFi.',
+            'Interfaces escaláveis com React, Next.js, TypeScript e Tailwind CSS.',
+            'Integrações com APIs REST, carteiras digitais e dados em tempo real.'
+          ],
+          width: '50%'
         },
         {
           year: 'Nov 2023 - Mar 2024',
           status: 'Desenvolvedor Back-End',
           organization: 'Starta Solutions',
-          description:
-            'Desenvolvi aplicações server-side com Node.js e Express.js, construindo e otimizando APIs REST para o frontend. Também trabalhei com modelagem e manutenção de bancos MySQL via Sequelize ORM em sprints de produto.',
-          width: '40%'
+          description: [
+            'Aplicações server-side com Node.js e Express.js.',
+            'Construção e otimização de APIs REST para o frontend.',
+            'Modelagem e manutenção de bancos MySQL com Sequelize ORM.'
+          ],
+          width: '50%'
         },
         {
           year: 'Out 2023 - Jan 2024',
           status: 'Desenvolvedor Web',
           organization: 'Codante',
-          description:
-            'Construí interfaces responsivas e acessíveis com React, Next.js e React Native, colaborando com designers no Figma para transformar protótipos em layouts fiéis e aplicar princípios mobile-first em experiências web e mobile.',
-          width: '40%'
+          description: [
+            'Interfaces responsivas e acessíveis com React, Next.js e React Native.',
+            'Transformação de protótipos do Figma em layouts fiéis.',
+            'Aplicação de princípios mobile-first em experiências web e mobile.'
+          ],
+          width: '50%'
         },
         {
           year: 'Ago 2021 - Jul 2023',
           status: 'Instrutor de Tecnologia',
           organization: 'Trybe',
-          description:
-            'Mentorei mais de 100 desenvolvedores iniciantes em JavaScript, HTML, CSS e React.js. Conduzi aulas ao vivo, workshops e sessões baseadas em projetos, realizei code reviews e contribuí para melhorias curriculares e processos internos.',
-          width: '60%'
+          description: [
+            'Mentoria de mais de 100 desenvolvedores iniciantes.',
+            'Aulas ao vivo, workshops e sessões baseadas em projetos.',
+            'Code reviews e melhorias curriculares e de processos internos.'
+          ],
+          width: '50%'
         },
         {
           year: '2020 - 2021',
           status: 'Formação Full Stack',
           organization: 'Trybe',
-          description:
-            'Formação intensiva em Desenvolvimento Web Full Stack com tecnologias amplamente utilizadas pelo mercado.',
-          width: '40%'
+          description: [
+            'Formação intensiva em Desenvolvimento Web Full Stack.',
+            'Prática com tecnologias amplamente utilizadas pelo mercado.',
+            'Base sólida em frontend, backend, bancos de dados e boas práticas.'
+          ],
+          width: '50%'
         }
       ]
     },
@@ -180,46 +197,63 @@ export const translations = {
     experiences: {
       title: 'Since 2020',
       subtitle: 'continuously evolving',
+      previous: 'Display previous experiences',
+      next: 'Display next experiences',
       items: [
         {
           year: 'Feb 2024 - Feb 2026',
           status: 'Front-End Developer',
           organization: 'Opsin Finance',
-          description:
-            'I developed and maintained the frontend of a Web3 analytics platform for blockchain and DeFi, building scalable interfaces with React, Next.js, TypeScript and Tailwind CSS. I also integrated REST APIs, digital wallets and real-time data for trading features and multi-chain flows.',
-          width: '60%'
+          description: [
+            'Frontend for a Web3 analytics platform focused on blockchain and DeFi.',
+            'Scalable interfaces with React, Next.js, TypeScript and Tailwind CSS.',
+            'REST API, digital wallet and real-time data integrations.'
+          ],
+          width: '50%'
         },
         {
           year: 'Nov 2023 - Mar 2024',
           status: 'Back-End Developer',
           organization: 'Starta Solutions',
-          description:
-            'I developed server-side applications with Node.js and Express.js, building and optimizing REST APIs for the frontend. I also worked with MySQL database modeling and maintenance using Sequelize ORM in product sprints.',
-          width: '40%'
+          description: [
+            'Server-side applications with Node.js and Express.js.',
+            'REST API development and optimization for frontend applications.',
+            'MySQL database modeling and maintenance with Sequelize ORM.'
+          ],
+          width: '50%'
         },
         {
           year: 'Oct 2023 - Jan 2024',
           status: 'Web Developer',
           organization: 'Codante',
-          description:
-            'I built responsive and accessible interfaces with React, Next.js and React Native, collaborating with designers in Figma to turn prototypes into faithful layouts and apply mobile-first principles across web and mobile experiences.',
-          width: '40%'
+          description: [
+            'Responsive and accessible interfaces with React, Next.js and React Native.',
+            'Figma prototypes translated into faithful layouts.',
+            'Mobile-first principles applied across web and mobile experiences.'
+          ],
+          width: '50%'
         },
         {
           year: 'Aug 2021 - Jul 2023',
           status: 'Technology Instructor',
           organization: 'Trybe',
-          description:
-            'I mentored more than 100 junior developers in JavaScript, HTML, CSS and React.js. I led live classes, workshops and project-based sessions, performed code reviews and contributed to curriculum and internal process improvements.',
-          width: '60%'
+          description: [
+            'Mentorship for more than 100 junior developers.',
+            'Live classes, workshops and project-based sessions.',
+            'Code reviews plus curriculum and internal process improvements.'
+          ],
+          width: '50%'
         },
         {
           year: '2020 - 2021',
           status: 'Full Stack Program',
           organization: 'Trybe',
-          description:
-            'Intensive Full Stack Web Development program focused on widely adopted technologies.',
-          width: '40%'
+          description: [
+            'Intensive Full Stack Web Development program.',
+            'Hands-on practice with widely adopted technologies.',
+            'Solid foundation in frontend, backend, databases and best practices.'
+          ],
+          width: '50%'
         }
       ]
     },
