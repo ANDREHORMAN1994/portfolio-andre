@@ -118,64 +118,127 @@ export const Container = styled.div`
     }
 
     > div {
+      margin-left: 0;
       width: 100%;
     }
   }
 `;
 
 export const DynamicContainer = styled.div`
+  --typing-gap: 0.65em;
+
+  align-items: center;
   display: inline-flex;
+  flex-wrap: nowrap;
+  gap: 0.9rem;
+  max-width: 100%;
+  white-space: nowrap;
 
   .static {
     font-size: 3rem;
     font-weight: 400;
+    line-height: 1;
     color: ${({ theme }) => theme.textPure};
-    margin-right: 15px;
+    white-space: nowrap;
   }
 
   .dynamic {
-    /* line-height: 90px; */
-    height: 60px;
-    overflow: hidden;
-  }
-
-  .dynamic li {
-    margin-bottom: 5px;
-    position: relative;
-    left: 0;
-    top: 0;
-    animation: slide 7.5s steps(3) infinite;
-  }
-
-  @keyframes slide {
-    100% {
-      top: -190px;
-    }
-  }
-
-  .dynamic li span {
-    position: relative;
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
     font-size: 3rem;
-    font-weight: 500;
-    color: ${({ theme }) => theme.secondary};
+    height: 3.6rem;
+    overflow: hidden;
+    padding: 0 calc(var(--typing-gap) + 0.25em) 0 0;
+    position: relative;
+    white-space: nowrap;
   }
 
-  .dynamic li span::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    border-left: 2px solid ${({ theme }) => theme.primary};
-    animation: typing 2.5s steps(13) infinite;
+  .dynamic span {
+    display: inline-block;
+    position: relative;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1;
+    top: 0.08em;
+    color: ${({ theme }) => theme.secondary};
+    white-space: nowrap;
+  }
+
+  .dynamic span::after {
     background: ${({ theme }) => theme.background};
+    border-left: 2px solid ${({ theme }) => theme.primary};
+    content: '';
+    height: 1.45em;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% + var(--typing-gap));
+    animation: typing 4s forwards;
   }
 
   @keyframes typing {
+    0% {
+      left: 0;
+      margin-left: 0;
+      border-left-color: ${({ theme }) => theme.primary};
+      animation-timing-function: steps(14, end);
+    }
+
+    64% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: ${({ theme }) => theme.primary};
+      animation-timing-function: step-end;
+    }
+
+    70% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: transparent;
+      animation-timing-function: step-end;
+    }
+
+    76% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: ${({ theme }) => theme.primary};
+      animation-timing-function: step-end;
+    }
+
+    82% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: transparent;
+      animation-timing-function: step-end;
+    }
+
+    88% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: ${({ theme }) => theme.primary};
+      animation-timing-function: step-end;
+    }
+
+    94% {
+      left: 100%;
+      margin-left: var(--typing-gap);
+      border-left-color: transparent;
+      animation-timing-function: step-end;
+    }
+
     100% {
       left: 100%;
-      margin: 0 -35px 0 35px;
+      margin-left: var(--typing-gap);
+      border-left-color: ${({ theme }) => theme.primary};
     }
+  }
+
+  @media (max-width: 1000px) {
+    --typing-gap: 0.55em;
+
+    gap: 0.4rem;
   }
 `;
 
@@ -207,18 +270,13 @@ export const TextContainer = styled.section`
       font-size: 2.5rem;
     }
 
-    .dynamic li span {
+    .dynamic span {
       font-size: 2.5rem;
     }
 
     .dynamic {
-      height: 50px;
-    }
-
-    @keyframes slide {
-      100% {
-        top: -160px;
-      }
+      font-size: 2.5rem;
+      height: 3.1rem;
     }
   }
 
@@ -235,18 +293,13 @@ export const TextContainer = styled.section`
       font-size: 1.6rem;
     }
 
-    .dynamic li span {
+    .dynamic span {
       font-size: 1.6rem;
     }
 
     .dynamic {
-      height: 30px;
-    }
-
-    @keyframes slide {
-      100% {
-        top: -105px;
-      }
+      font-size: 1.6rem;
+      height: 2.2rem;
     }
   }
 `;
@@ -256,6 +309,8 @@ export const InfoContainer = styled.section`
   color: ${({ theme }) => theme.secondary};
   display: flex;
   gap: 0.6rem;
+  max-width: 100%;
+  min-width: 0;
   width: 100%;
 
   &:hover,
@@ -265,12 +320,18 @@ export const InfoContainer = styled.section`
       padding: 2.5rem;
     }
   }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export const InfoCarouselViewport = styled.div.attrs({
   id: 'hero-info-carousel'
 })`
+  flex: 1 1 auto;
   max-width: 31.5rem;
+  min-width: 0;
   overflow: hidden;
   width: 100%;
 
@@ -289,6 +350,7 @@ interface InfoCarouselTrackProps {
 
 export const InfoCarouselTrack = styled.div<InfoCarouselTrackProps>`
   display: flex;
+  min-width: 0;
   transform: ${({ $showContacts }) =>
     $showContacts ? 'translateX(-100%)' : 'translateX(0)'};
   transition: transform 0.5s ease-in-out;
@@ -301,7 +363,9 @@ interface InfoCarouselSlideProps {
 
 export const InfoCarouselSlide = styled.div<InfoCarouselSlideProps>`
   flex: 0 0 100%;
+  min-width: 0;
   opacity: ${({ $active }) => ($active ? 1 : 0.2)};
+  overflow: hidden;
   transition: opacity 0.5s ease-in-out;
   width: 100%;
 `;
@@ -381,13 +445,16 @@ export const CodeItem = styled.section<CodeItemProps>`
 
   @media (max-width: 700px) {
     animation: none;
+    font-size: 0.72rem;
     opacity: 1;
+    padding: 1.25rem;
     transform: translateX(0%);
   }
 
   > div {
     margin: 0.2rem;
     margin-left: 1rem;
+    overflow-wrap: anywhere;
   }
 
   span.purple {
@@ -396,6 +463,7 @@ export const CodeItem = styled.section<CodeItemProps>`
 
   span.blue {
     color: ${({ theme }) => theme.codeValue};
+    overflow-wrap: anywhere;
   }
 
   span.comments {

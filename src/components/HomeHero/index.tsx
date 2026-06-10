@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Code from './Code';
@@ -14,9 +14,27 @@ import {
   TextContainer
 } from './styles';
 
+const HERO_DYNAMIC_TEXT_COUNT = 3;
+const HERO_TEXT_ROTATION_MS = 4300;
+
 function HomeHero(): ReactElement {
   const { text } = useLanguage();
   const [showContacts, setShowContacts] = useState(false);
+  const [dynamicTextIndex, setDynamicTextIndex] = useState(0);
+  const dynamicTexts = [text.hero.andre, text.hero.frontEnd, text.hero.backEnd];
+  const dynamicText = dynamicTexts[dynamicTextIndex] ?? dynamicTexts[0];
+
+  useEffect(() => {
+    const rotationInterval = window.setInterval(() => {
+      setDynamicTextIndex(
+        currentIndex => (currentIndex + 1) % HERO_DYNAMIC_TEXT_COUNT
+      );
+    }, HERO_TEXT_ROTATION_MS);
+
+    return () => {
+      window.clearInterval(rotationInterval);
+    };
+  }, []);
 
   return (
     <Container>
@@ -37,17 +55,9 @@ function HomeHero(): ReactElement {
           <h1>{text.hero.hello}</h1>
           <DynamicContainer>
             <div className="static">{text.hero.iAm}</div>
-            <ul className="dynamic">
-              <li>
-                <span>{text.hero.andre}</span>
-              </li>
-              <li>
-                <span>{text.hero.frontEnd}</span>
-              </li>
-              <li>
-                <span>{text.hero.backEnd}</span>
-              </li>
-            </ul>
+            <div className="dynamic">
+              <span key={dynamicText}>{dynamicText}</span>
+            </div>
           </DynamicContainer>
           {/* <h2>Me chamo André</h2> */}
         </TextContainer>
@@ -65,7 +75,7 @@ function HomeHero(): ReactElement {
                   size="31.5"
                   infos={[
                     ['name', '"André Horman"'],
-                    ['age', 30],
+                    ['age', 31],
                     ['role', '"Full-Stack Developer"'],
                     ['hobbies', '["Games 🎮", "Movies 🎬", "Animes 🖖"]']
                   ]}
