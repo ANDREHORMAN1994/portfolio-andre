@@ -18,6 +18,7 @@ export const translations = {
     },
     navigation: {
       home: 'Início',
+      about: 'Sobre',
       projects: 'Projetos',
       experience: 'Experiência',
       enableDarkTheme: 'Ativar tema escuro',
@@ -158,6 +159,7 @@ export const translations = {
     },
     navigation: {
       home: 'Home',
+      about: 'About',
       projects: 'Projects',
       experience: 'Experience',
       enableDarkTheme: 'Enable dark theme',

@@ -21,12 +21,13 @@ export const CarouselContainer = styled.section`
 `;
 
 export const CarouselViewport = styled.div`
-  --experience-carousel-padding: 1.5rem;
+  --experience-carousel-padding: 2.75rem;
 
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 2.25rem var(--experience-carousel-padding) 2.75rem;
+  padding-block: 2.75rem 3rem;
   scroll-behavior: smooth;
+  scroll-padding-inline: var(--experience-carousel-padding);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   width: 100%;
@@ -35,9 +36,14 @@ export const CarouselViewport = styled.div`
     display: none;
   }
 
+  @media (max-width: 1000px) {
+    --experience-carousel-padding: 2rem;
+  }
+
   @media (max-width: 700px) {
     overflow: visible;
     padding: 0;
+    scroll-padding-inline: 0;
   }
 `;
 
@@ -46,6 +52,7 @@ export const CarouselTrack = styled.div`
   gap: 2rem;
   grid-auto-columns: calc((100% - 2rem) / 2);
   grid-auto-flow: column;
+  padding-inline: var(--experience-carousel-padding);
 
   @media (max-width: 1000px) {
     gap: 1rem;
@@ -60,13 +67,20 @@ export const CarouselTrack = styled.div`
   }
 `;
 
-export const CarouselButton = styled.button`
+interface CarouselButtonProps {
+  $isVisible: boolean;
+}
+
+export const CarouselButton = styled.button<CarouselButtonProps>`
   background: none;
   border: none;
   color: ${({ theme }) => theme.secondary};
   flex: 0 0 auto;
   font-size: 2rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  pointer-events: ${({ $isVisible }) => ($isVisible ? 'auto' : 'none')};
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
 
   &:hover,
   &:focus-visible {

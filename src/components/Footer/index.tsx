@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { AiFillLinkedin, AiOutlineGithub } from 'react-icons/ai';
 import { FaWpforms } from 'react-icons/fa';
+import { IoArrowUpCircleOutline } from 'react-icons/io5';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Tooltip } from '../Tooltip';
 import { Container } from './styles';
@@ -19,6 +20,7 @@ export function Footer(): ReactElement {
     <Container>
       <div className="container">
         <button type="button" onClick={handleScrollTop}>
+          <IoArrowUpCircleOutline aria-hidden="true" />
           {text.footer.backToTop}
         </button>
         <section>

@@ -15,15 +15,24 @@ export const Container = styled.footer`
     justify-content: space-between;
 
     button {
+      align-items: center;
       background: none;
       border: none;
       color: ${({ theme }) => theme.secondary};
-      text-transform: uppercase;
-      font-weight: 300;
+      display: inline-flex;
       font-size: 1.2rem;
+      font-weight: 300;
+      gap: 0.45rem;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
 
       &:hover {
         color: ${({ theme }) => theme.primary};
+      }
+
+      svg {
+        height: 1.35rem;
+        width: 1.35rem;
       }
     }
 

@@ -9,7 +9,7 @@ export function About(): ReactElement {
   const { text } = useLanguage();
 
   return (
-    <Container>
+    <Container id="about">
       <Title title={text.about.title} description={text.about.subtitle} />
       <section data-aos="fade-up">
         {picture && (

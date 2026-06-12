@@ -1,5 +1,6 @@
 import { ReactElement, useRef } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCarouselControls } from '@/hooks/useCarouselControls';
 import Title from '../Title';
 import ExperienceItem from './ExperienceItem';
 import {
@@ -13,13 +14,8 @@ import {
 export function Experiences(): ReactElement {
   const { text } = useLanguage();
   const viewportRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (direction: number): void => {
-    viewportRef.current?.scrollBy({
-      behavior: 'smooth',
-      left: direction * viewportRef.current.clientWidth
-    });
-  };
+  const { canScrollLeft, canScrollRight, handleScroll } =
+    useCarouselControls(viewportRef);
 
   return (
     <Container id="experience">
@@ -29,7 +25,10 @@ export function Experiences(): ReactElement {
       />
       <CarouselContainer>
         <CarouselButton
+          $isVisible={canScrollLeft}
           aria-label={text.experiences.previous}
+          disabled={!canScrollLeft}
+          tabIndex={canScrollLeft ? 0 : -1}
           type="button"
           onClick={() => {
             handleScroll(-1);
@@ -45,7 +44,10 @@ export function Experiences(): ReactElement {
           </CarouselTrack>
         </CarouselViewport>
         <CarouselButton
+          $isVisible={canScrollRight}
           aria-label={text.experiences.next}
+          disabled={!canScrollRight}
+          tabIndex={canScrollRight ? 0 : -1}
           type="button"
           onClick={() => {
             handleScroll(1);

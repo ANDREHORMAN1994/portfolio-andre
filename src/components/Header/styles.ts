@@ -7,11 +7,12 @@ interface NavLinkProps {
 
 export const Container = styled.header`
   align-items: center;
+  background: ${({ theme }) => `${theme.background}f2`};
   border-bottom: 1px solid ${({ theme }) => theme.border};
   display: flex;
   justify-content: center;
   min-height: 4rem;
-  padding: 0.55rem 1rem;
+  padding: 0.55rem 0;
   position: relative;
   width: 100%;
 
@@ -29,9 +30,9 @@ export const Container = styled.header`
 
     nav {
       flex-flow: row nowrap;
-      gap: 0.25rem;
-      justify-content: space-between;
-      width: 100%;
+      gap: 0.9rem;
+      justify-content: center;
+      width: auto;
 
       > span > span[role='tooltip'] {
         display: none;
@@ -40,12 +41,37 @@ export const Container = styled.header`
   }
 `;
 
+export const HeaderContent = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 85rem;
+  padding: 0 1rem;
+  width: 100%;
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 1450px) {
+    max-width: 70rem;
+  }
+
+  @media (max-width: 1000px) {
+    max-width: 50rem;
+  }
+
+  @media (max-width: 700px) {
+    justify-content: center;
+    padding: 0;
+  }
+`;
+
 export const HeaderIconActions = styled.div`
   align-items: center;
   display: flex;
   gap: 0.75rem;
-  position: absolute;
-  right: 1rem;
 
   a {
     background: none;
@@ -101,22 +127,46 @@ export const ThemeButton = styled.button`
 
 export const NavItemContainer = styled.div<NavLinkProps>`
   a {
-    text-transform: uppercase;
+    align-items: center;
     color: ${props =>
       props.$isActive ? props.theme.primary : props.theme.textHighlight};
-    transition: 0.5s;
+    display: inline-flex;
+    padding-bottom: 0.35rem;
+    position: relative;
+    text-transform: uppercase;
+    transition: color 0.35s ease;
 
-    &:hover {
+    &::after {
+      background: currentColor;
+      border-radius: 999px;
+      bottom: 0;
+      content: '';
+      height: 2px;
+      left: 0;
+      opacity: ${props => (props.$isActive ? 1 : 0)};
+      position: absolute;
+      transform: scaleX(${props => (props.$isActive ? 1 : 0)});
+      transform-origin: left;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus-visible {
       color: ${props =>
         props.$isActive
           ? lighten(0.2, props.theme.primary)
           : lighten(0.2, props.theme.textHighlight)};
+
+      &::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
     }
   }
 
   @media (max-width: 700px) {
     a {
-      display: block;
       font-size: 0.75rem;
       letter-spacing: 0.03rem;
       padding: 0.4rem 0.25rem;

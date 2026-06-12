@@ -27,7 +27,9 @@ function NavLink({
 
   return (
     <NavItemContainer $isActive={isActive}>
-      <Link href={path}>{title}</Link>
+      <Link aria-current={isActive ? 'page' : undefined} href={path}>
+        {title}
+      </Link>
     </NavItemContainer>
   );
 }

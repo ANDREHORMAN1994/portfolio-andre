@@ -102,12 +102,19 @@ export const CarouselTrack = styled.div`
   }
 `;
 
-export const CarouselButton = styled.button`
+interface CarouselButtonProps {
+  $isVisible: boolean;
+}
+
+export const CarouselButton = styled.button<CarouselButtonProps>`
   background: none;
   border: none;
   color: ${({ theme }) => theme.secondary};
   font-size: 2rem;
-  transition: 0.3s;
+  opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
+  pointer-events: ${({ $isVisible }) => ($isVisible ? 'auto' : 'none')};
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  visibility: ${({ $isVisible }) => ($isVisible ? 'visible' : 'hidden')};
 
   &:hover,
   &:focus-visible {
