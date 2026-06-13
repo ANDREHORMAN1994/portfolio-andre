@@ -19,10 +19,17 @@ export function Footer(): ReactElement {
   return (
     <Container>
       <div className="container">
-        <button type="button" onClick={handleScrollTop}>
-          <IoArrowUpCircleOutline aria-hidden="true" />
-          {text.footer.backToTop}
+        <button
+          aria-label={text.footer.backToTop}
+          type="button"
+          onClick={handleScrollTop}
+        >
+          <span className="scroll-icon">
+            <IoArrowUpCircleOutline aria-hidden="true" />
+          </span>
+          <span className="scroll-label">{text.footer.backToTop}</span>
         </button>
+        <p>© 2026 André Horman</p>
         <section>
           <Tooltip align="start" label={text.footer.github}>
             <a
