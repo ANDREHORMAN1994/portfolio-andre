@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "@sendgrid/mail": "^8.1.6",
-    "axios": "^1.16.1",
     "next": "16.2.6",
     "nextjs-progressbar": "^0.0.16",
     "polished": "^4.3.1",
