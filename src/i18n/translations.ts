@@ -53,6 +53,13 @@ export const translations = {
       viewAll: 'Ver todos os projetos',
       technologies: 'Tecnologias Utilizadas 👨‍💻',
       viewProject: 'Ver projeto 👀',
+      backToProjects: 'Voltar para projetos',
+      caseStudy: 'Detalhes do projeto',
+      aboutProject: 'Sobre o projeto',
+      projectDetails: 'Informações do projeto',
+      category: 'Categoria',
+      stack: 'Stack',
+      techCount: (count: number) => `${count} tecnologias`,
       sourceCode: (title: string) => `Ver código-fonte de ${title} no GitHub`
     },
     experiences: {
@@ -194,6 +201,14 @@ export const translations = {
       viewAll: 'View all projects',
       technologies: 'Technologies Used 👨‍💻',
       viewProject: 'View project 👀',
+      backToProjects: 'Back to projects',
+      caseStudy: 'Project details',
+      aboutProject: 'About the project',
+      projectDetails: 'Project information',
+      category: 'Category',
+      stack: 'Stack',
+      techCount: (count: number) =>
+        `${count} ${count === 1 ? 'technology' : 'technologies'}`,
       sourceCode: (title: string) => `View ${title} source code on GitHub`
     },
     experiences: {

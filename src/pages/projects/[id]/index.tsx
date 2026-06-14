@@ -2,6 +2,12 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { type GetServerSideProps } from 'next';
 import { AiFillGithub } from 'react-icons/ai';
+import {
+  FiArrowLeft,
+  FiExternalLink,
+  FiLayers,
+  FiMonitor
+} from 'react-icons/fi';
 import Head from 'next/head';
 import Link from 'next/link';
 import {
@@ -46,14 +52,6 @@ function ProjectDetails({
   const socialImage = `${SITE_URL}${imgUrl}`;
   const projectUrl = `${SITE_URL}/projects/${id.toString()}`;
 
-  const verifyIndex = (index: number): string => {
-    const lastIndexList = techs.length - 1;
-    if (index === lastIndexList && index % 2 === 0) {
-      return 'li-complete';
-    }
-    return '';
-  };
-
   return (
     <ProjectDetailsContainer>
       <Head>
@@ -74,31 +72,76 @@ function ProjectDetails({
       <Header status={status} setStatus={setStatus} />
       <Banner title={title} icon={icon} type={type} imgUrl={imgUrl} />
 
-      <main data-aos="fade-up">
-        <p>{description}</p>
-        <h2 data-aos="fade-up">{text.projects.technologies}</h2>
-        <ul data-aos="fade-up">
-          {techs.map((tech, index) => (
-            <li key={tech} className={verifyIndex(index)}>
-              {tech}
-            </li>
-          ))}
-        </ul>
-        <div>
-          <Link href={link} target="_blank" rel="noreferrer">
-            {text.projects.viewProject}
-          </Link>
-          <Tooltip label={text.projects.sourceCode(title)}>
-            <Link
-              href={repo}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={text.projects.sourceCode(title)}
-            >
-              <AiFillGithub />
-            </Link>
-          </Tooltip>
-        </div>
+      <main className="container" data-aos="fade-up">
+        <Link className="back-link" href="/projects">
+          <FiArrowLeft />
+          {text.projects.backToProjects}
+        </Link>
+
+        <section className="details-grid">
+          <article className="project-summary">
+            <span className="section-kicker">{text.projects.caseStudy}</span>
+            <h2>{text.projects.aboutProject}</h2>
+            <p>{description}</p>
+
+            <div className="actions">
+              <Link
+                className="primary-action"
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{text.projects.viewProject}</span>
+                <FiExternalLink />
+              </Link>
+
+              <Tooltip label={text.projects.sourceCode(title)}>
+                <Link
+                  className="secondary-action"
+                  href={repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={text.projects.sourceCode(title)}
+                >
+                  <AiFillGithub />
+                  <span>GitHub</span>
+                </Link>
+              </Tooltip>
+            </div>
+          </article>
+
+          <aside
+            className="project-aside"
+            aria-label={text.projects.projectDetails}
+          >
+            <div className="info-list">
+              <div className="info-item">
+                <span>
+                  <FiMonitor />
+                  {text.projects.category}
+                </span>
+                <strong>{type}</strong>
+              </div>
+
+              <div className="info-item">
+                <span>
+                  <FiLayers />
+                  {text.projects.stack}
+                </span>
+                <strong>{text.projects.techCount(techs.length)}</strong>
+              </div>
+            </div>
+
+            <div className="tech-panel">
+              <h2>{text.projects.technologies}</h2>
+              <ul>
+                {techs.map(tech => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </section>
       </main>
     </ProjectDetailsContainer>
   );

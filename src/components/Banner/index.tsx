@@ -21,7 +21,7 @@ export function Banner({
         {icon ? (
           <h1>
             {title}
-            <img src={icon} alt={title} />
+            <img src={icon} alt="" aria-hidden="true" />
           </h1>
         ) : (
           <h1>{title}</h1>

@@ -1,8 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   $bottomOffset: number;
   $footerOffset: number;
+  $isProjectDetailsPage: boolean;
 }
 
 export const Container = styled.aside<ContainerProps>`
@@ -22,6 +23,13 @@ export const Container = styled.aside<ContainerProps>`
   transition: bottom 0.2s ease;
   z-index: 10;
 
+  ${({ $isProjectDetailsPage }) =>
+    $isProjectDetailsPage &&
+    css`
+      bottom: auto;
+      top: 5rem;
+    `}
+
   > svg {
     color: ${({ theme }) => theme.secondary};
     height: 1.2rem;
@@ -38,11 +46,14 @@ export const Container = styled.aside<ContainerProps>`
   }
 
   @media (max-width: 700px) {
+    bottom: auto;
     right: 2rem;
+    top: 4.75rem;
   }
 
   @media (max-width: 420px) {
     right: 1rem;
+    top: 4.35rem;
   }
 `;
 
