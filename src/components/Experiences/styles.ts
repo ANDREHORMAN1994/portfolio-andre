@@ -131,7 +131,7 @@ export const ItemContainer = styled.div<ItemContainerProps>`
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      color: ${({ theme }) => theme.textPure};
+      color: ${({ theme }) => theme.textLight};
       font-size: 1rem;
       font-weight: 500;
       margin-bottom: 1rem;

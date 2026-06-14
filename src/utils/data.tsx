@@ -24,8 +24,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/webcam-emotions.png',
     description: {
-      pt: `A WebCam Emotions é uma aplicação desenvolvida em React JS utilizando a Face API para reconhecimento facial. Com esta aplicação, você poderá ver em tempo real, por meio de sua webcam, como as expressões faciais se relacionam com diferentes emoções, como felicidade, tristeza, surpresa e raiva.`,
-      en: `WebCam Emotions is a React JS application that uses Face API for facial recognition. Through your webcam, it lets you see in real time how facial expressions relate to emotions such as happiness, sadness, surprise and anger.`
+      pt: `WebCam Emotions é uma experiência web em React que combina Face API e React Webcam para detectar expressões faciais em tempo real. A interface transforma a câmera do usuário em um painel visual de emoções, destacando estados como felicidade, tristeza, surpresa e raiva com feedback imediato e interativo.`,
+      en: `WebCam Emotions is a React web experience that combines Face API and React Webcam to detect facial expressions in real time. It turns the user's camera into an interactive emotion panel, highlighting states such as happiness, sadness, surprise and anger through immediate visual feedback.`
     },
     techs: [
       'React JS',
@@ -45,8 +45,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/clone-gpt.png',
     description: {
-      pt: `O Clone GPT é uma aplicação desenvolvida em Next JS utilizando a API da OpenAI para gerar textos de maneira natural. O intuito é que o usuário possa conversar com o bot, fazendo perguntas e recebendo respostas.`,
-      en: `Clone GPT is a Next JS application that uses the OpenAI API to generate natural language text. Users can chat with the bot, ask questions and receive answers.`
+      pt: `Clone GPT é uma interface conversacional construída com Next.js e integrada à API da OpenAI. O projeto reproduz um fluxo moderno de chat, com envio de prompts, respostas geradas por IA e uma experiência simples para explorar conversas em linguagem natural.`,
+      en: `Clone GPT is a conversational interface built with Next.js and integrated with the OpenAI API. It recreates a modern chat flow with prompt submission, AI-generated responses and a simple experience for exploring natural-language conversations.`
     },
     techs: ['Next JS', 'TypeScript', 'Tailwind CSS', 'OpenAI', 'Vercel'],
     link: 'https://clone-gpt-openai.vercel.app/',
@@ -58,8 +58,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/pixel-art-game.png',
     description: {
-      pt: `O Pixel Art Game é um jogo desenvolvido para plataformas Desktop e Mobile que proporciona aos jogadores a experiência única de criar pinturas em estilo de 8 ou 16 bits. Agora, você pode elevar o desafio ao pintar quadros pixelados o mais rápido possível, com base em pinturas de referência, visando conquistar mais pontos. Sua pontuação será exibida na tela de classificação, incentivando a competição e o aprimoramento constante.`,
-      en: `Pixel Art Game is a desktop and mobile game where players create 8-bit or 16-bit style paintings. The challenge is to reproduce pixelated reference images as quickly as possible to earn more points. Scores appear on a leaderboard, encouraging competition and continuous improvement.`
+      pt: `Pixel Art Game combina criação livre e desafios cronometrados em uma experiência responsiva para desktop e mobile. Com React, Redux Toolkit, MUI e Styled Components, o jogador pinta grades em estilo 8/16 bits, reproduz imagens de referência e acompanha sua pontuação em um ranking.`,
+      en: `Pixel Art Game blends free drawing and timed challenges in a responsive desktop and mobile experience. Built with React, Redux Toolkit, MUI and Styled Components, it lets players paint 8/16-bit grids, reproduce reference images and track scores on a ranking screen.`
     },
     techs: [
       'React JS',
@@ -79,8 +79,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/pokedex-vanilla.png',
     description: {
-      pt: `A Pokédex Vanilla é uma aplicação Web desenvolvida com HTML5, CSS3 e JavaScript. Ela permite que os usuários visualizem informações sobre os 151 primeiros Pokémon, como nome, tipo, altura, peso e habilidades.`,
-      en: `Pokédex Vanilla is a web application built with HTML5, CSS3 and JavaScript. It lets users view information about the first 151 Pokémon, including name, type, height, weight and abilities.`
+      pt: `Pokédex Vanilla é uma aplicação web em HTML, CSS e JavaScript que consome a PokéAPI para apresentar os 151 primeiros Pokémon. O projeto prioriza uma interface inspirada na Pokédex, exibindo nome, tipo, altura, peso e habilidades com navegação direta e visual familiar.`,
+      en: `Pokédex Vanilla is an HTML, CSS and JavaScript web app that consumes PokéAPI to present the first 151 Pokémon. It focuses on a familiar Pokédex-inspired interface with direct navigation through name, type, height, weight and ability details.`
     },
     techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
     link: 'https://pokedex-vanilla-andre-horman.vercel.app/',
@@ -92,8 +92,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/happy-app.png',
     description: {
-      pt: `O Happy é uma aplicação Desktop desenvolvida para facilitar a integração entre a comunidade e lares de acolhimento. Essa plataforma permite que os usuários busquem locais cadastrados em um mapa interativo fornecido pelo Leaflet. Além disso, os usuários têm a possibilidade de adicionar informações como horários de atendimento, descrição para público alvo, localização e instruções para visita. Tudo sendo conectado com um banco de dados PostgreSQL.`,
-      en: `Happy is a desktop application designed to connect communities with care homes. Users can find registered locations on an interactive Leaflet map and add details such as opening hours, audience descriptions, locations and visiting instructions. The application is connected to a PostgreSQL database.`
+      pt: `Happy é uma aplicação web full stack que aproxima comunidades de lares de acolhimento. Com Node, Express, Prisma, PostgreSQL e Leaflet, permite cadastrar instituições, exibir unidades em um mapa interativo e organizar informações essenciais para visitas, como horários, público atendido e instruções.`,
+      en: `Happy is a full-stack web application that connects communities with care homes. Built with Node, Express, Prisma, PostgreSQL and Leaflet, it supports institution registration, interactive map discovery and essential visit details such as opening hours, audience and instructions.`
     },
     techs: [
       'HTML',
@@ -117,8 +117,8 @@ const myProjetcs: Project[] = [
     type: 'API Node JS',
     imgUrl: '/images/slido-api.png',
     description: {
-      pt: `A Slido API oferece recursos para o cadastro de usuários e para o gerenciamento completo de perguntas e respostas dos clientes. Com ela, é possível realizar um CRUD completo, sendo capaz de criar, visualizar, editar e remover cada pergunta ou resposta cadastrada. Além disso, a Slido API permite que os usuários realizem login como cliente ou admin, facilitando o controle de acesso e a gestão de permissões. Com essa funcionalidade, é possível garantir a segurança e a privacidade dos dados cadastrados na plataforma.`,
-      en: `Slido API provides user registration and complete customer question-and-answer management. It supports full CRUD operations to create, view, edit and remove registered questions or answers. Users can also sign in as clients or admins, simplifying access control and permission management while protecting platform data.`
+      pt: `Slido API é uma API REST em Node.js e Express para gerenciar usuários, autenticação e registros de perguntas e respostas. O projeto usa MongoDB, Bcrypt, JWT e Swagger para oferecer CRUD, controle de acesso por perfis cliente/admin e endpoints documentados em uma base organizada e segura.`,
+      en: `Slido API is a Node.js and Express REST API for managing users, authentication and question-and-answer records. It uses MongoDB, Bcrypt, JWT and Swagger to provide CRUD operations, client/admin role access and documented endpoints in an organized, security-minded backend.`
     },
     techs: [
       'Node JS',
@@ -141,8 +141,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/memory-game-dbz.png',
     description: {
-      pt: `O Memory Game DBZ é uma aplicação Web desenvolvida em ReactJS, que consiste em um jogo da memória com os personagens do anime Dragon Ball Z. A aplicação possui uma tela inicial de Login e uma tela de jogo, onde o usuário deve encontrar os pares de cartas iguais com o menor tempo possível.`,
-      en: `Memory Game DBZ is a ReactJS web application featuring a memory game with characters from the Dragon Ball Z anime. It includes a login screen and a game screen where players must find matching card pairs as quickly as possible.`
+      pt: `Memory Game DBZ é um jogo da memória em React e TypeScript com identidade visual inspirada em Dragon Ball Z. A experiência inclui tela inicial/login e uma partida cronometrada, na qual o jogador precisa encontrar pares de cartas no menor tempo possível.`,
+      en: `Memory Game DBZ is a React and TypeScript memory game with a Dragon Ball Z-inspired visual identity. It includes an initial/login screen and a timed match flow where players find matching card pairs as quickly as possible.`
     },
     techs: ['React JS', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     link: 'https://memory-game-dbz.vercel.app/',
@@ -155,8 +155,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/the-blog.png',
     description: {
-      pt: `O Blog Angular é uma aplicação Web desenvolvida em Angular, que consome a News API para exibir as principais notícias do momento. O projeto foi desenvolvido com o intuito de praticar os conceitos básicos do Angular, como componentes, diretivas, serviços, rotas, entre outros.`,
-      en: `Blog Angular is an Angular web application that consumes the News API to display current headlines. The project was built to practice Angular fundamentals such as components, directives, services and routes.`
+      pt: `Blog Angular é uma aplicação de notícias construída com Angular e TypeScript, consumindo a News API para exibir manchetes atuais. O projeto explora componentes, serviços, diretivas e rotas em uma interface de blog limpa, responsiva e inspirada em layouts editoriais modernos.`,
+      en: `Blog Angular is a news application built with Angular and TypeScript that consumes the News API to display current headlines. It explores components, services, directives and routes through a clean, responsive blog interface inspired by modern editorial layouts.`
     },
     techs: ['Angular', 'TypeScript', 'Vercel'],
     link: 'https://blog-angular-andre-horman.vercel.app/',
@@ -169,8 +169,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/genius-game.png',
     description: {
-      pt: `O Genius Game também conhecido como Simon Game é um jogo de memória que desafia os jogadores a repetirem sequências de cores e sons. Este jogo foi desenvolvido utilizando tecnologias de ponta como React JS, Typescript e Tailwind CSS.`,
-      en: `Genius Game, also known as Simon Game, is a memory game that challenges players to repeat color and sound sequences. It was developed with React JS, TypeScript and Tailwind CSS.`
+      pt: `Genius Game é uma versão web do clássico Simon Game, criada com React, TypeScript e Tailwind CSS. O jogo desafia o usuário a memorizar e repetir sequências de cores e sons, com navegação por rotas e feedback visual claro para tornar a experiência rápida e envolvente.`,
+      en: `Genius Game is a web version of the classic Simon Game built with React, TypeScript and Tailwind CSS. It challenges players to memorize and repeat color-and-sound sequences, with routed screens and clear visual feedback for a fast, engaging experience.`
     },
     techs: [
       'React JS',
@@ -190,8 +190,8 @@ const myProjetcs: Project[] = [
     type: 'Web Site',
     imgUrl: '/images/tic-tac-toe.png',
     description: {
-      pt: `O Jogo da Velha é um jogo de tabuleiro de dois jogadores, X e O, que alternam entre si marcando os espaços em um tabuleiro 3x3. O jogador que conseguir colocar três de suas marcas em uma linha horizontal, vertical ou diagonal, vence o jogo. O projeto foi desenvolvido utilizando HTML, CSS e JavaScript Vanilla.`,
-      en: `Tic-tac-toe is a board game for two players, X and O, who take turns marking spaces on a 3x3 grid. The first player to place three marks in a horizontal, vertical or diagonal row wins. This project was developed with HTML, CSS and vanilla JavaScript.`
+      pt: `Jogo da Velha é uma implementação em HTML, CSS e JavaScript Vanilla do clássico tabuleiro 3x3. O projeto trabalha lógica de turnos, detecção de vitória e reinício de partida em uma interface direta, leve e responsiva para partidas rápidas entre dois jogadores.`,
+      en: `Tic-tac-toe is a vanilla HTML, CSS and JavaScript implementation of the classic 3x3 board game. It handles turn logic, win detection and match reset in a lightweight, responsive interface for quick two-player rounds.`
     },
     techs: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
     link: 'https://tic-tac-toe-vanilla.vercel.app/',
