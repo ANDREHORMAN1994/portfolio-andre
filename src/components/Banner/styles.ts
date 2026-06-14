@@ -49,10 +49,6 @@ export const Container = styled.div<ContainerProps>`
       line-height: 1.05;
 
       > img {
-        background: ${({ theme }) => `${theme.primary}1f`};
-        border: 1px solid ${({ theme }) => `${theme.primary}66`};
-        border-radius: 0.5rem;
-        padding: 0.35rem;
         width: 3.4rem;
       }
     }
