@@ -56,7 +56,6 @@ export function LanguageSwitcher(): ReactElement {
         }}
       >
         <span aria-hidden="true">🇧🇷</span>
-        <span>PT</span>
       </LanguageButton>
       <LanguageButton
         $active={language === 'en'}
@@ -68,7 +67,6 @@ export function LanguageSwitcher(): ReactElement {
         }}
       >
         <span aria-hidden="true">🇺🇸</span>
-        <span>EN</span>
       </LanguageButton>
     </Container>
   );

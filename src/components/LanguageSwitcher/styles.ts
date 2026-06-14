@@ -32,9 +32,10 @@ export const Container = styled.aside<ContainerProps>`
 
   > svg {
     color: ${({ theme }) => theme.secondary};
-    height: 1.2rem;
-    margin: 0 0.25rem;
-    width: 1.2rem;
+    flex: 0 0 auto;
+    height: 1.15rem;
+    margin: 0 0.2rem;
+    width: 1.15rem;
   }
 
   @media (max-width: 1450px) {
@@ -46,9 +47,19 @@ export const Container = styled.aside<ContainerProps>`
   }
 
   @media (max-width: 700px) {
+    border-radius: 1.25rem;
     bottom: auto;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.25rem;
     right: 2rem;
     top: 4.75rem;
+
+    > svg {
+      height: 0.95rem;
+      margin: 0.1rem 0;
+      width: 0.95rem;
+    }
   }
 
   @media (max-width: 420px) {
@@ -69,20 +80,35 @@ export const LanguageButton = styled.button<LanguageButtonProps>`
   border-radius: 1.5rem;
   color: ${({ $active, theme }) => ($active ? '#fff' : theme.secondary)};
   display: flex;
-  font-size: 0.75rem;
-  font-weight: 600;
-  gap: 0.3rem;
-  padding: 0.45rem 0.55rem;
+  height: 2rem;
+  justify-content: center;
+  padding: 0;
   transition: 0.3s;
+  width: 2.25rem;
 
-  &:hover,
-  &:focus-visible {
-    background: ${({ theme }) => theme.primary};
-    color: #fff;
+  &:hover {
+    background: ${({ $active, theme }) =>
+      $active ? theme.primary : 'transparent'};
   }
 
-  > span:first-child {
-    font-size: 1rem;
+  &:focus-visible {
+    background: ${({ $active, theme }) =>
+      $active ? theme.primary : 'transparent'};
+    outline: 2px solid ${({ theme }) => theme.primary};
+    outline-offset: 2px;
+  }
+
+  > span {
+    font-size: 1.05rem;
     line-height: 1;
+  }
+
+  @media (max-width: 700px) {
+    height: 1.7rem;
+    width: 1.7rem;
+
+    > span {
+      font-size: 0.9rem;
+    }
   }
 `;

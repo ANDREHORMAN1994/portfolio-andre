@@ -329,6 +329,8 @@ export const InfoContainer = styled.section`
 export const InfoCarouselViewport = styled.div.attrs({
   id: 'hero-info-carousel'
 })`
+  --hero-info-carousel-gap: 1.5rem;
+
   flex: 1 1 auto;
   max-width: 31.5rem;
   min-width: 0;
@@ -349,12 +351,13 @@ interface InfoCarouselTrackProps {
 }
 
 export const InfoCarouselTrack = styled.div<InfoCarouselTrackProps>`
+  gap: var(--hero-info-carousel-gap);
   display: flex;
   min-width: 0;
   transform: ${({ $showContacts }) =>
     $showContacts ? 'translateX(-100%)' : 'translateX(0)'};
   transition: transform 0.5s ease-in-out;
-  width: 100%;
+  width: calc(100% + var(--hero-info-carousel-gap));
 `;
 
 interface InfoCarouselSlideProps {
@@ -362,12 +365,12 @@ interface InfoCarouselSlideProps {
 }
 
 export const InfoCarouselSlide = styled.div<InfoCarouselSlideProps>`
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - var(--hero-info-carousel-gap));
   min-width: 0;
   opacity: ${({ $active }) => ($active ? 1 : 0.2)};
   overflow: hidden;
   transition: opacity 0.5s ease-in-out;
-  width: 100%;
+  width: calc(100% - var(--hero-info-carousel-gap));
 `;
 
 interface InfoCarouselControlProps {
